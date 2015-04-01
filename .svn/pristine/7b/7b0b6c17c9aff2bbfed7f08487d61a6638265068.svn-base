@@ -1,0 +1,52 @@
+﻿<body>
+    <div id="wrapper">
+        
+        @if (!ViewContext.ViewData.ModelState.IsValid) {
+            <div id="modelStateInvalid"></div>
+        }
+        <div id="top-wrapper">
+            <div id="top">
+                @if (!User.Identity.IsAuthenticated) {
+                    <h1>WELCOME, GUEST</h1>
+                }
+                else {
+                    <h1>WELCOME, @WebSecurity.CurrentUserName</h1>
+                }
+                <img src="~/Content/img/gears.jpg" />
+                 @if (!User.Identity.IsAuthenticated) {
+                     <p><a href="@Url.Action("Register", "Account")">Зарегистрируйтесь!</a> 
+                         или <a href="@Url.Action("Login", "Account")">Авторизируйтесь</a></p>
+                 }
+                 else {
+                     <p></p>
+                 }
+                @if (Roles.IsUserInRole("lecturer") || Roles.IsUserInRole("admin")) {
+                    <a class="become" href="@Url.Action("QuestionList", "Test")">Вопросы</a>
+                }
+                else {
+                    <a class="become" href="@Url.Action("Index", "Test")">Пройти тест</a>
+                }
+            </div>
+        </div><!-- #top-wrapper-->
+
+        <div id="content-wrapper">
+            <div id="content">
+                <!-- Here will probably be text in the future -->
+            </div>
+        </div><!-- #content-wrapper-->
+    
+        <div id="bottom-wrapper">
+            <div id="bottom">
+        	
+            </div>
+        </div><!-- #bottom-wrapper-->
+    </div>
+</body>
+    <script type="text/javascript">
+        $('.bxslider').bxSlider({
+            mode: 'fade'
+        });
+</script>
+
+
+ 

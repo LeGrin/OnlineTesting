@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMPR-testing", "SMPR-testing\SMPR-testing.csproj", "{47D13AEA-6D0E-4763-9CB6-7C78A3C954D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMPR-testing.Tests", "SMPR-testing.Tests\SMPR-testing.Tests.csproj", "{D972C381-277E-4693-AEF1-2DAE7CD8F088}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMPR-testing-Lib", "SMPR-testing-Lib\SMPR-testing-Lib.csproj", "{0A256E03-86FF-45E0-A2A7-A647EDA3BD86}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4602A7FC-F1CC-4AA4-A22E-7C64E5A90128}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeJudge", "RealTimeJudge\RealTimeJudge.csproj", "{C545BD48-F54F-42B3-9225-E9DE5A45E07D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMPRSheduler", "WindowsServiceFirst\WindowsServiceFirst\SMPRSheduler.csproj", "{6C500C8A-6A48-4FE6-8182-00C7F2C949E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSchedulerProject", "TestSchedulerProject\TestSchedulerProject.csproj", "{C63D74B6-C006-443C-AEF1-977596C6E20A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47D13AEA-6D0E-4763-9CB6-7C78A3C954D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47D13AEA-6D0E-4763-9CB6-7C78A3C954D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47D13AEA-6D0E-4763-9CB6-7C78A3C954D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47D13AEA-6D0E-4763-9CB6-7C78A3C954D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D972C381-277E-4693-AEF1-2DAE7CD8F088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D972C381-277E-4693-AEF1-2DAE7CD8F088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D972C381-277E-4693-AEF1-2DAE7CD8F088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D972C381-277E-4693-AEF1-2DAE7CD8F088}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A256E03-86FF-45E0-A2A7-A647EDA3BD86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A256E03-86FF-45E0-A2A7-A647EDA3BD86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A256E03-86FF-45E0-A2A7-A647EDA3BD86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A256E03-86FF-45E0-A2A7-A647EDA3BD86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C545BD48-F54F-42B3-9225-E9DE5A45E07D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C545BD48-F54F-42B3-9225-E9DE5A45E07D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C545BD48-F54F-42B3-9225-E9DE5A45E07D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C545BD48-F54F-42B3-9225-E9DE5A45E07D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C500C8A-6A48-4FE6-8182-00C7F2C949E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C500C8A-6A48-4FE6-8182-00C7F2C949E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C500C8A-6A48-4FE6-8182-00C7F2C949E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C500C8A-6A48-4FE6-8182-00C7F2C949E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C63D74B6-C006-443C-AEF1-977596C6E20A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C63D74B6-C006-443C-AEF1-977596C6E20A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C63D74B6-C006-443C-AEF1-977596C6E20A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C63D74B6-C006-443C-AEF1-977596C6E20A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal

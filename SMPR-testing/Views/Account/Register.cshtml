@@ -1,0 +1,74 @@
+﻿@model SMPR_testing.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+    
+    List<SelectListItem> groupList = new List<SelectListItem>();
+    
+    foreach (var group in Model.Groups) {
+        groupList.Add(new SelectListItem {
+            Text = group.Name,
+            Value = group.Id.ToString()
+        });
+    }
+}
+
+<hgroup class="title">
+    @*<h1>@ViewBag.Title.</h1>*@
+    <h2 id="new-account-title">Создание нового аккаунта</h2>
+</hgroup>
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @id = "register-form" })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    
+    <table data-is-name-busy="@Url.Action("IsLoginNameBusy", "Account")">
+        <tr>
+            <td>@Html.LabelFor(m => m.LoginName)</td>
+            <td>@Html.TextBoxFor(m => m.LoginName)</td>
+        </tr>
+        
+        <tr>
+            <td>@Html.LabelFor(m => m.Name)</td>
+            <td>@Html.TextBoxFor(m => m.Name)</td>
+        </tr>
+        
+        <tr>
+            <td>@Html.LabelFor(m => m.Password)</td>
+            <td>@Html.TextBoxFor(m => m.Password)</td>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td>
+                @Html.DropDownList("GroupId", groupList, "- Выберите группу -")
+            </td>
+        </tr>
+
+    </table>
+    
+     <input type="submit" id="reg-button" value="Регистрация" />
+    
+     @Html.HiddenFor(m => m.RegDate, new { value = @DateTime.Now })
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $(document).ready(function() {
+            $('#reg-button').click(function(e) {
+                e.preventDefault();
+                var loginName = $('#LoginName').val();
+
+                var form = $('#register-form');
+
+                $.post(form.find('table').data('is-name-busy'), { loginName: loginName }, function (data) {
+                    if (data == true)
+                        alert("Такое имя уже занято");
+                    else
+                        form.submit();
+                });
+            });
+        });
+    </script>
+}

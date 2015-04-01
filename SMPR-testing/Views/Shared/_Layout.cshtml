@@ -1,0 +1,91 @@
+﻿@{
+    bool isAuthenticated = User.Identity.IsAuthenticated;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title></title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link rel="stylesheet" href="~/Content/css/style.css" type="text/css" media="screen, projection" />
+    
+        <!-- jQuery library (served from Google) -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <!-- bxSlider Javascript file -->
+        <script src="~/Content/js/jquery.bxslider.min.js"></script>
+    
+        <!-- bxSlider CSS file -->
+        @*<link href="~/Content/css/jquery.bxslider.css" rel="stylesheet" />*@
+    
+        @Styles.Render("~/Content/css/style.css")
+    </head>
+    
+    <body>
+        <div id="wrapper">
+            <div id="header-wrapper">
+                <div id="header">
+                    <ul>
+                        @if (isAuthenticated) {
+                            <li><a href="@Url.Action("Index", "Profile")">@WebSecurity.CurrentUserName</a></li>
+                        }
+                        <li><a class="hider" href="#" data-logoff="@Url.Action("Logoff", "Account")"
+                               data-login="@Url.Action("Login", "Account")"
+                               data-isAuthorized="@User.Identity.IsAuthenticated.ToString().ToLower()">
+                                @(isAuthenticated ? "Log out" : "Log in")
+                            </a>
+                        </li>
+                        <li><a href="@Url.Action("Index", "Home")">HOME</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            @RenderBody()
+            
+            <div id="footer">
+                <div id="footer-menu">
+                    <ul>
+                        <li><a class="active" href="@Url.Action("Index", "Home")">HOME</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="@Url.Action("Index", "Profile")">My Account</a></li>
+                        <li><a href="@Url.Action("Login", "Account")">Log In</a></li>
+                    </ul>
+                </div>
+                <div id="copyrights">Copyright (c) UNICYB 2014</div>
+            </div>
+        </div>
+    </body>
+   
+</html>
+
+@RenderSection("scripts", required: false)
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("body").children().last().css("visibility", "hidden");
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".hider").click(function (e) {
+            e.preventDefault();
+
+            if ($(this).data('isauthorized') == true) {
+                window.location = $(this).data('logoff');
+                return false;
+            }
+
+            window.location = $(this).data('login');
+        });
+
+        //remove ads
+        $("body").children().last().css("visibility", "hidden");
+        $($("body").children().get($("body").children().size() - 2)).css("display", "none");
+        $("center").last().css("display", "none")
+    });
+
+    
+</script>

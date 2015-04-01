@@ -1,0 +1,15 @@
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\WindowsServiceFirst.exe.config
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\WindowsServiceFirst.exe
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\WindowsServiceFirst.pdb
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\RealTimeJudge.dll
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\SMPR-testing-Lib.dll
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\EntityFramework.dll
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\RealTimeJudge.pdb
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\SMPR-testing-Lib.pdb
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\EntityFramework.xml
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\SMPRSheduler.csprojResolveAssemblyReference.cache
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\SMPRShedulerService.ProjectInstaller.resources
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\SMPRShedulerService.SMPRSheduler.resources
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\SMPRSheduler.csproj.GenerateResource.Cache
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\WindowsServiceFirst.exe
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\WindowsServiceFirst.pdb

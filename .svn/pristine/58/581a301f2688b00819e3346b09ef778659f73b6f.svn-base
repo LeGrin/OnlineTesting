@@ -1,0 +1,108 @@
+﻿@model SMPR_testing.Models.TestModel
+
+<body>
+
+<div id="wrapper">
+
+	<div id="top-wrapper">
+	    <div id="top">
+	        @if (ViewBag.TestPassed) {
+	            <h2>Тест уже пройден</h2>
+	        }
+	        else {
+	            <h2>Тест @DateTime.Now.Date.ToString("dd.MM.yyyy")</h2>
+         }
+	    </div>
+        <div class="clr"></div>  
+    </div><!-- #top-wrapper-->
+    
+     @if (!ViewBag.TestPassed) {
+         <div id="content-wrapper">
+             <div id="content">
+                 <ul class="bxslider" 
+                     data-closetest="@Url.Action("CloseTestForUser", "Test", 
+                                                 new { userId = WebSecurity.CurrentUserId, testId = ViewBag.TestId })"
+                     data-viewresults="@Url.Action("Index", "Profile", new { userId = WebSecurity.CurrentUserId })">
+	            
+                     @foreach (var task in Model.Tasks) {
+                         <li>
+                             <form data-url="@Url.Action("Answer", "Test", new {taskId = task.Id})">
+                                 <h3>@task.Question</h3>
+                                 @foreach (var answer in task.Answers) {
+                                     <input name="answer" type="@(task.TaskType.Name == "Usual task" ? "checkbox" : "radio")"/>
+                                     <label>@answer.Text</label>
+                                     <br />
+                                 }
+                             </form>
+                         </li>
+                     }
+
+                 </ul>
+                 <a class="btn" id="respond" href="#">Ответить</a>
+             </div>
+         </div>
+         <!-- #content-wrapper-->
+     }
+    
+    <div id="bottom-wrapper">
+    	<div id="bottom">
+        	
+	  </div>
+      <div class="clr"></div>  
+    </div><!-- #bottom-wrapper-->
+    
+</div>
+</div><!-- #wrapper -->
+
+<script type="text/javascript">
+    $('.bxslider').bxSlider({
+        mode: 'fade'
+    });
+</script>
+
+<script type="text/javascript">// <![CDATA[
+    $(document).ready(function () {
+
+        var remainingQuestions = $('.bxslider form').length;
+
+        $('#respond').click(function () {
+            var form = $('#content-wrapper li:visible form');
+
+            if (form.hasClass('answered')) {
+                alert('Вы уже ответили на этот вопрос');
+                return;
+            }
+
+            var checkedLabels = form.find('input:checked').next();
+            if (!checkedLabels.length)
+                return;
+
+            var answer = '';
+
+            checkedLabels.each(function () {
+                answer += $(this).text() + '|';
+            });
+
+            answer = answer.substring(0, answer.length - 1);
+
+            $.post(form.data('url'), { answer: answer }, function (data) {
+                form.closest('li').fadeOut(300);
+                setTimeout('$(".bx-next").click();', 300);
+
+                form.addClass('answered');
+                form.find('input[type=checkbox]').attr('disabled', true);
+
+                --remainingQuestions;
+                
+                if (remainingQuestions == 0) {
+                    $.post($('#content').data('closetest'));
+                    window.location = $('ul.bxslider').data('viewresults');
+                }
+            });
+        });
+    });
+    // ]]></script>
+
+</body>
+
+@Styles.Render("~/Content/css/jquery.bxslider.css")

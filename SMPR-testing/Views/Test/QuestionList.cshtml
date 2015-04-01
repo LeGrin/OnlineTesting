@@ -1,0 +1,80 @@
+﻿@model List<SMPR_testing.Models.DeleteQuestionModel>
+
+<script type="text/javascript" src="~/Content/js/jquery.fancybox.js"></script>
+
+<div id="content">
+    <h2>Список вопросов</h2>
+    <div class="questionlist">
+        <table width="200" border="0">
+            <tbody data-delete-link="@Url.Action("DeleteQuestion", "Test")">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Вопрос</th>
+                    <th scope="col">Удалить</th>
+                </tr>
+            
+                @{ int i = 0; }
+
+                @foreach (var question in Model) {
+                    ++i;
+                
+                    <tr data-question-id="@question.Id" data-answers-link="@Url.Action("TaskAnswers", new { taskId = question.Id })">
+                        <td>@i</td>
+                        <td><a class="modalbox" href="#inline">@question.Question</a></td>
+                        <td class="remove-question"><a href="#">удалить</a></td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+        <a class="become" href="@Url.Action("AddQuestion", "Test")">Добавить вопрос</a>
+    </div>
+</div>
+
+<div class="hidder">
+    <div id="inline" style="display: none;">
+        <div id="inline-box">
+            <h3>Ответы:</h3> <div id="answers-list">Тут сейчас появятся ответы на вопрос</div>
+        </div>
+    </div>
+</div>
+
+<div class="fancybox-overlay fancybox-overlay-fixed">
+    <div class="fancybox-wrap fancybox-desktop fancybox-type-inline fancybox-opened" tabindex="-1">
+        <div class="fancybox-skin">
+            <div class="fancybox-outer">
+                <div class="fancybox-inner">
+                </div>
+            </div><a title="Close" class="fancybox-item fancybox-close" href="javascript:;"></a>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+
+        $(".modalbox").fancybox();
+
+        $('.modalbox').click(function () {
+            $('#answers-list').html('Тут сейчас появятся ответы на вопрос');
+            $.post($(this).closest('tr').data('answers-link'), function (data) {
+                $('#answers-list').html(data);
+            });
+        });
+
+        $('.remove-question').click(function () {
+            if (window.confirm('Точно удалять этот вопрос?')) {
+                debugger;
+                var row = $(this).closest('tr');
+                var id = row.data('question-id');
+
+                $.post($('tbody').data('delete-link'), { questionId: id }, function(data) {
+                    if (data == true) {
+                        alert('question deleted');
+                        row.remove();
+                    }
+                });
+            }
+        });
+    });
+</script>

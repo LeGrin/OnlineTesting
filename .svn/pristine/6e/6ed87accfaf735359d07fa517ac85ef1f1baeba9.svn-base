@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="AfterBuild">
+  <Import Project="$(MSBuildCommunityTasksPath)\MSBuild.Community.Tasks.Targets"/>
+  <Target Name="AfterBuild">    
+    <PropertyGroup>
+        <ftpHost>smpr.unicyb.kiev.ua</ftpHost>
+        <ftpUser>smpr</ftpUser>
+        <ftpPass>dq5EZ3HRhCh</ftpPass>
+        <LocalDirectory>../</LocalDirectory>
+    </PropertyGroup>
+        <FtpUploadDirectoryContent
+    ServerHost="$(ftpHost)"
+        Port="21"
+        Username="$(ftpUser)"
+        Password="$(ftpPass)"
+        LocalDirectory="$(LocalDirectory)"
+        RemoteDirectory="./"
+        Recursive="true"
+        />
+</Target>
+</Project>

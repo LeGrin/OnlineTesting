@@ -1,0 +1,118 @@
+﻿@model List<StudentShortStatistic>
+
+@using SMPR_testing.Models;
+@using System.Linq;
+
+<body>
+    <div id="wrapper">
+        <div id="top-wrapper">
+            <div id="top">
+                <h2>Результаты теста</h2>
+            </div>
+        </div><!-- #top-wrapper-->
+
+        <div id="content">
+            <div id="result-tab">
+                <div class="tab-nav">
+                    <a href="javascript:;" id="tab1" class="tabs active">ТК-3</a>
+                    <a href="javascript:;" id="tab2" class="tabs">МИ-3</a>
+                    <a href="javascript:;" id="tab3" class="tabs">ТП-3</a>
+                </div>
+                
+                <div id="con_tab1" class="tabs active">
+
+                    <table width="200" border="0">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Студент</th>
+                            <th scope="col">Правильно/Всего</th>
+                            <th scope="col">Оценка</th>
+                        </tr>
+            
+                        @{
+                            int i = 0;
+                        }
+            
+                        @foreach (var student in Model.Where(x => x.Group.Name == "TK-3")) {
+                            ++i;
+                            <tr>
+                                <td>@i</td>
+                                <td><a href="@Url.Action("Index", "Account", new { userId = student.Id })">@student.Name</a></td>
+                                <td>@student.AnswersCorrect/@student.TotalAnswers</td>
+                                <td>2 (10)</td>
+                            </tr>
+                        }
+                        
+                    </table>
+                </div>
+                <div id="con_tab2" class="tabs">
+
+                    <table width="200" border="0">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Студент</th>
+                            <th scope="col">Правильно/Всего</th>
+                            <th scope="col">Оценка</th>
+                        </tr>
+            
+                        @{
+                            i = 0;
+                        }
+            
+                        @foreach (var student in Model.Where(x => x.Group.Name == "MI-3")) {
+                            ++i;
+                            <tr>
+                                <td>@i</td>
+                                <td><a href="@Url.Action("Index", "Account", new { userId = student.Id })">@student.Name</a></td>
+                                <td>@student.AnswersCorrect/@student.TotalAnswers</td>
+                                <td>2 (10)</td>
+                            </tr>
+                        }
+                        
+                    </table>
+                </div>
+                <div id="con_tab3" class="tabs">
+
+                    <table width="200" border="0">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Студент</th>
+                            <th scope="col">Правильно/Всего</th>
+                            <th scope="col">Оценка</th>
+                        </tr>
+            
+                        @{
+                            i = 0;
+                        }
+            
+                        @foreach (var student in Model.Where(x => x.Group.Name == "ТТП-3")) {
+                            ++i;
+                            <tr>
+                                <td>@i</td>
+                                <td><a href="@Url.Action("Index", "Account", new { userId = student.Id })">@student.Name</a></td>
+                                <td>@student.AnswersCorrect/@student.TotalAnswers</td>
+                                <td>2 (10)</td>
+                            </tr>
+                        }
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+	
+	$('#result-tab a').click(function() {
+    var tab_id=$(this).attr('id');
+    tabClick(tab_id)
+	});
+	function tabClick(tab_id) {
+		if (tab_id != $('#result-tab a.active').attr('id') ) {
+			$('#result-tab .tabs').removeClass('active');
+			$('#'+tab_id).addClass('active');
+			$('#con_' + tab_id).addClass('active');
+		}    
+	}
+</script>

@@ -1,0 +1,69 @@
+﻿@model SMPR_testing.Models.StudentStatistic
+
+@{
+    bool showCorrectAnswers = User.IsInRole("lecturer") || User.IsInRole("admin");
+}
+
+<body>
+    <div id="wrapper">
+
+	<div id="top-wrapper">
+	    <div id="top">
+	        <h2>@Model.Name</h2>
+	        <h2>Результат: @Model.AnswersCorrect / @Model.TotalAnswers</h2>
+	    </div>
+    </div><!-- #top-wrapper-->
+
+    	<div id="content">
+        <table width="200" border="0">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Вопрос</th>
+                <th scope="col">Ответ</th>
+                <th scope="col">Цена вопроса</th>
+            </tr>
+            @{
+                int i = 1;
+            }
+            
+            @foreach (var answer in Model.Answers) {
+                
+                string answerClass = "";
+                if (showCorrectAnswers) {
+                    if (answer.IsCorrect) {
+                        answerClass = "correct-answer";
+                    }
+                    else {
+                        answerClass = "wrong-answer";
+                    }
+                }
+                
+                <tr class="@answerClass">
+                    <td>@i</td> @{ ++i; }
+                    <td>@answer.Question</td>
+                    <td>@answer.Answer</td>
+                        <td>@answer.Price.ToString("f2")</td>
+                </tr>
+            }
+        </table>
+		</div>
+        <div class="clr"></div>  
+    </div><!-- #content-wrapper-->
+    
+    <div id="bottom-wrapper">
+    	<div id="bottom">
+        	
+	  </div>
+      <div class="clr"></div>  
+    </div><!-- #bottom-wrapper-->
+    
+</div><!-- #wrapper -->
+
+<script type="text/javascript">
+$('.bxslider').bxSlider({
+  mode: 'fade'
+});
+</script>
+
+
+</body>

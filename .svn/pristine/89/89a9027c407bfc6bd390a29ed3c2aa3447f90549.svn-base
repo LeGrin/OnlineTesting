@@ -1,0 +1,25 @@
+﻿@{
+    Layout = null;
+}
+
+<div id="login" data-isAuthorized="@User.Identity.IsAuthenticated.ToString().ToLower()">
+    <h2>LOG IN</h2>
+    <a class="reg" href="@Url.Action("Register", "Account")">Register!</a>
+    <form action="@Url.Action("Login", "Account")" method='post' id='loginForm'>
+        @TempData["LoginError"]
+        <br />
+        <div><input type='text' name='UserName' placeholder="Имя" @*onfocus="if (this.value=='Name') this.value='';" onblur="if (this.value=='') this.value='Name';" value="Name"*@ id='name'></div>
+        <div><input type='password' required="required" name='Password' placeholder="Пароль" @*onfocus="if (this.value=='Password') this.value='';" onblur="if (this.value=='') this.value='Password';" value="Password"*@ id='pass'></div>
+        @*<div><input type='checkbox' name='RememberMe' ></div>*@
+        <div class='submit'> <a href="#"><img src="~/Content/img/ok.jpg" /></a></div>
+        @*<a class="forgot" href="#">Forgot your password?</a>*@
+    </form>     
+</div>
+
+<script>
+    $(function() {
+        $('#loginForm .submit').click(function () {
+            $(this).closest('form').submit();
+        });
+    });
+</script>

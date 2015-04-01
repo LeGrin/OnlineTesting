@@ -1,0 +1,10 @@
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\RealTimeJudge\bin\Debug\RealTimeJudge.dll.config
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\RealTimeJudge\bin\Debug\RealTimeJudge.dll
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\RealTimeJudge\bin\Debug\RealTimeJudge.pdb
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\RealTimeJudge\bin\Debug\SMPR-testing-Lib.dll
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\RealTimeJudge\bin\Debug\EntityFramework.dll
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\RealTimeJudge\bin\Debug\SMPR-testing-Lib.pdb
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\RealTimeJudge\bin\Debug\EntityFramework.xml
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\RealTimeJudge\obj\Debug\RealTimeJudge.csprojResolveAssemblyReference.cache
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\RealTimeJudge\obj\Debug\RealTimeJudge.dll
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\RealTimeJudge\obj\Debug\RealTimeJudge.pdb

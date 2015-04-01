@@ -1,0 +1,7 @@
+﻿@model List<SMPR_testing_Lib.Domain.Answer>
+
+<ul class="answers">
+    @foreach (var answer in Model) {
+        <li class="@(answer.IsCorrect ? "correct" : "")">@answer.Text</li>
+    }
+</ul>

@@ -1,0 +1,42 @@
+﻿@model SMPR_testing.Models.LoginModel
+
+@{
+    ViewBag.Title = "Авторизация";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+
+<section>
+@using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @id="register-form", ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <table>
+        <tr>
+            <td>@Html.LabelFor(m => m.UserName)</td>
+            <td> @Html.TextBoxFor(m => m.UserName)</td>
+            <td> @Html.ValidationMessageFor(m => m.UserName)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Password)</td> 
+            <td>@Html.PasswordFor(m => m.Password)</td>
+            <td>@Html.ValidationMessageFor(m => m.Password)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })</td>
+            <td>@Html.CheckBoxFor(m => m.RememberMe)</td>
+        </tr>
+    </table>
+    <input type="submit" id="reg-button" value="Авторизация">
+    <p></p>
+    <p>
+        @Html.ActionLink("Зарегистрируйтесь", "Register"), если у Вас нет аккаунта.
+    </p>
+}
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

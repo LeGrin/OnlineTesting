@@ -1,0 +1,14 @@
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\bin\Debug\TestSchedulerProject.exe.config
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\bin\Debug\TestSchedulerProject.exe
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\bin\Debug\TestSchedulerProject.pdb
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\bin\Debug\EntityFramework.dll
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\bin\Debug\EntityFramework.SqlServer.dll
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\bin\Debug\RealTimeJudge.dll
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\bin\Debug\SMPR-testing-Lib.dll
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\bin\Debug\RealTimeJudge.pdb
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\bin\Debug\SMPR-testing-Lib.pdb
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\bin\Debug\EntityFramework.xml
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\bin\Debug\EntityFramework.SqlServer.xml
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\obj\Debug\TestSchedulerProject.csprojResolveAssemblyReference.cache
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\obj\Debug\TestSchedulerProject.exe
+\\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\obj\Debug\TestSchedulerProject.pdb

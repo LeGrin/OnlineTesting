@@ -1,0 +1,138 @@
+﻿@using SMPR_testing.Models
+@model AddQuestionModel
+
+@{
+    List<SelectListItem> taskTypes = new List<SelectListItem>();
+
+    foreach (var type in Model.TaskTypes)
+    {
+        taskTypes.Add(new SelectListItem
+        {
+            Text = type.Name,
+            Value = type.Id.ToString()
+        });
+    }
+}
+
+<div id="wrapper">
+
+    <div id="top-wrapper">
+        <div id="top">
+            <h2>Добавить вопрос в тест</h2>
+        </div>
+        <div class="clr"></div>
+    </div>
+    <!-- #top-wrapper-->
+
+    <div id="content-wrapper">
+        <div id="content">
+            <h4>@Html.ValidationSummary()</h4>
+
+            <form id="question" action="@Url.Action("AddQuestion", "Test")" method="POST">
+                <h3>Введите вопрос:</h3>
+
+                @Html.HiddenFor(x => x.TestId)
+                @Html.TextBoxFor(x => x.Question)
+
+                @Html.DropDownList("TaskTypeId", taskTypes, "- Выберите тип задания -")
+
+                <h3>Максимальный балл за вопрос</h3>
+                @Html.TextBoxFor(x => x.Price, new { type = "number", min="1" })
+
+                <h3>Введите варианты ответа:</h3>
+
+                @for (int i = 0; i < Model.Answers.Count; ++i)
+                {
+                    <div name="@("question" + i)">
+                        <button name="deleteAnswer">X</button>
+                        @Html.TextBoxFor(x => x.Answers[i])
+                        <label>
+                            @Html.CheckBoxFor(x => x.IsCorrect[i])
+                            True
+                        </label>
+                    </div>
+                }
+                <button id="addAnswer">+ Добавить ответ</button>
+                <a class="btn" href="#">Сохранить вопрос</a>
+            </form>
+        </div>
+        <div class="clr"></div>
+    </div>
+    <!-- #content-wrapper-->
+
+    <div id="bottom-wrapper">
+        <div id="bottom">
+        </div>
+        <div class="clr"></div>
+    </div>
+    <!-- #bottom-wrapper-->
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('form .btn').click(function () {
+            $(this).closest('form').submit();
+        });
+
+        $('form').submit(function () {
+            //$('');
+        });
+
+        //add answer row at the end
+        $("#addAnswer").click(function (evt) { addQuestion(); evt.preventDefault(); });
+
+        SetEventHandlers();
+    });
+
+    function createRow(index) {
+        var newRow = '<div name="question' + index + '"><button name="deleteAnswer">X</button> ' +
+            '<input value="" name="Answers[' + index + ']" type="text">' +
+            '<label> <input name="IsCorrect[' + index + ']" type="checkbox" value="true">' +
+            '<input name="IsCorrect[' + index + ']" type="hidden" value="false"> True</label></div>';
+        return newRow;
+    }
+
+    function changeIndexOfTheRow(row, newIndex) {
+        $(row).attr("name", "question" + newIndex);
+        $(row).find("input[type='text']").attr("name", "Answers[" + newIndex + "]");
+        $(row).find("input[type='checkbox']").attr("name", "IsCorrect[" + newIndex + "]");
+        $(row).find("input[type='hidden']").attr("name", "IsCorrect[" + newIndex + "]");
+    }
+
+    function addQuestion() {
+        var lastRow = $("div[name^='question']").last();
+        var newAnswerIndex = Number(getRowIndex(lastRow)) + 1;
+        var newRowHtml = createRow(newAnswerIndex);
+        lastRow.after(newRowHtml);
+        var newRow = lastRow.next("div");
+        SetEventHandlers();
+        $(newRow).hide();
+        $(newRow).slideDown("slow");
+    }
+
+    function SetEventHandlers() {
+        //remove answer row on click
+        $("button[name='deleteAnswer']").click(function (evt) {
+            deleteRow(evt.target); evt.preventDefault();
+        });
+    }
+
+    function deleteRow(but) {
+        var row = $(but).closest("div");
+        $(but).remove();
+        var nextRows = row.nextAll("div[name^='question']");
+
+        for (var i = 0; i < nextRows.length; i++) {
+            var rowIndex = Number(getRowIndex(nextRows.get(i)));
+            changeIndexOfTheRow(nextRows.get(i), rowIndex - 1);
+        }
+        $(row).slideUp("slow", function () { $(this).remove(); });
+        return false;
+    }
+
+
+
+    function getRowIndex(row) {
+        return $(row).attr("name").charAt($(row).attr("name").length - 1);
+    }
+</script>

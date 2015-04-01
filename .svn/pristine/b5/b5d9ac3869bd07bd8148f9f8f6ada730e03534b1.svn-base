@@ -1,0 +1,46 @@
+﻿@model IQueryable<SMPR_testing_Lib.Domain.User>
+
+@{
+    ViewBag.Title = "EditLecturers";
+}
+
+<h2>EditLecturers</h2>
+
+<div>
+    <div>
+        <fieldset>
+            <legend>
+                Добавление лектора
+            </legend>
+        @using (Html.BeginForm("AddLecturer", "Admin", FormMethod.Post))
+        {
+            @Html.Label("Как зовут - ")
+            @Html.TextBox("lecturerName")
+            @Html.Label("Имя для входа - ")
+            @Html.TextBox("lecturerLogin")
+            <input type="submit" value="Добавить" />
+        }
+        </fieldset>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Login name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.LoginName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

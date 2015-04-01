@@ -1,0 +1,82 @@
+﻿@model List<StudentShortStatistic>
+
+@using SMPR_testing.Models;
+@using System.Linq;
+
+@{
+    var groups = Model.Select(x => x.Group).Distinct();
+}
+
+<body>
+    <div id="wrapper">
+        <div id="top-wrapper">
+            <div id="top">
+                <h2>Результаты теста</h2>
+            </div>
+        </div><!-- #top-wrapper-->
+
+        <div id="content">
+            <div id="result-tab">
+                <div class="tab-nav">
+                    @{ int groupIndex = 0; }
+
+                    @foreach (var group in groups) {
+                        ++groupIndex;
+                        <a href="javascript:;" id="@( "tab" + groupIndex)" class="tabs @(groupIndex == 1 ? "active" : "")">@group.Name</a>
+                    }
+                </div>
+                
+                @{ groupIndex = 0; }
+                
+                @foreach (var group in groups) {
+                    ++groupIndex;
+                    
+                    <div id="@("con_tab" + groupIndex)" class="tabs @(groupIndex == 1 ? "active" : "")">
+
+                        <table width="200" border="0">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Студент</th>
+                                <th scope="col">Правильно/Всего</th>
+                                <th scope="col">Оценка</th>
+                            </tr>
+            
+                            @{ int i = 0; }
+            
+                            @foreach (var student in Model.Where(x => x.Group.Name == group.Name)) {
+                                ++i;
+                                <tr>
+                                    <td>@i</td>
+                                    <td><a href="@Url.Action("Index", "Profile", new { userId = student.Id })">@student.Name</a></td>
+                                    <td>@student.AnswersCorrect/@student.TotalAnswers</td>
+                                    <td>@student.Mark.ToString("f2")</td>
+                                </tr>
+                            }
+                        
+                        </table>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        
+        $('#result-tab a').click(function () {
+            var tabId = $(this).attr('id');
+            tabClick(tabId);
+        });
+        
+        function tabClick(tab_id) {
+            if (tab_id != $('#result-tab a.active').attr('id')) {
+                $('#result-tab .tabs').removeClass('active');
+                $('#' + tab_id).addClass('active');
+                $('#con_' + tab_id).addClass('active');
+            }
+        }
+    });
+   
+</script>

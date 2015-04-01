@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<repositories>
+  <repository path="..\SMPR-testing.Tests\packages.config" />
+  <repository path="..\SMPR-testing\packages.config" />
+  <repository path="..\SMPR-testing-Lib\packages.config" />
+  <repository path="..\TestSchedulerProject\packages.config" />
+</repositories>
