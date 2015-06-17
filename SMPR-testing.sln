@@ -1,16 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4602A7FC-F1CC-4AA4-A22E-7C64E5A90128}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMPR-testing", "SMPR-testing\SMPR-testing.csproj", "{47D13AEA-6D0E-4763-9CB6-7C78A3C954D0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMPR-testing.Tests", "SMPR-testing.Tests\SMPR-testing.Tests.csproj", "{D972C381-277E-4693-AEF1-2DAE7CD8F088}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMPR-testing-Lib", "SMPR-testing-Lib\SMPR-testing-Lib.csproj", "{0A256E03-86FF-45E0-A2A7-A647EDA3BD86}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4602A7FC-F1CC-4AA4-A22E-7C64E5A90128}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\packages.config = .nuget\packages.config
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeJudge", "RealTimeJudge\RealTimeJudge.csproj", "{C545BD48-F54F-42B3-9225-E9DE5A45E07D}"
 EndProject

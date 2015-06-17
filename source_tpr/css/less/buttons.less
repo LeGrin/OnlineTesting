@@ -1,0 +1,44 @@
+
+@primary: #00cccc;
+@primary-dark: #00b8b8;
+@default: #fff;
+
+.btn {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 12px 50px;
+  font-size: 1.5em;
+  color: #fff;
+  min-width: 70px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn-primary {
+  border: 2px @primary solid;
+  &:hover {
+    border-color: @primary;
+    background-color: @primary;
+    color: #000000;
+  }
+  &:active,&.active {
+    border-color: @primary-dark;
+    background-color: @primary-dark;
+    outline: none;
+  }
+  &:focus,&:active {
+    color: #fff;
+    background: transparent;
+    border-color: @primary;
+  }
+}
+
+.btn-default {
+  border: 3px @default solid;
+  &:hover {
+    border: 3px @default solid;
+    background-color: @default;
+    color: #000000;
+  }
+}

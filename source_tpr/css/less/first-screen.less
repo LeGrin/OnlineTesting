@@ -1,0 +1,39 @@
+
+.first-screen {
+  .first-bg {
+    background-color: @light-black;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+  }
+  .main-screen-bg {
+    background: url("../img/bookshelf.jpg") no-repeat center center fixed @light-black;
+    background-size: cover;
+    position: absolute;
+    opacity: 0.35;
+    width: 100%;
+    height: 100vh;
+  }
+  .content {
+    height: 100vh;
+  }
+  h1 {
+    text-align: center;
+    font-size: 4.5em;
+    margin-top: 35vh;
+    @media @mobile {
+      margin-top: 15vh;
+    }
+  }
+  h2 {
+    text-align: center;
+    font-size: 2.0em;
+    margin-bottom: 25px;
+  }
+  .start-btn {
+    width: 240px;
+    position: relative;
+    left: 50%;
+    margin-left: -120px;
+  }
+}

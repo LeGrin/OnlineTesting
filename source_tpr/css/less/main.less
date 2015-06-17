@@ -1,0 +1,102 @@
+@import "IronStrike";
+@import "first-screen";
+@import "buttons";
+@import "how";
+@import "about";
+@import "footer";
+@import "participants";
+@import "login-popup";
+@import "test-page";
+
+@backgroud-light: rgba(0, 169, 204, 0.05);
+
+@yellow: #fffc4a;
+@yellow-dark: #ffef79;
+
+@main-dark: #31383c;
+
+@sea-wave: #00cccc;
+@sea-wave-dark: #00b8b8;
+@light-black: #272822;
+@dark-red: #b0343d;
+
+@highdensity: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+~"only screen and (min-device-pixel-ratio: 1.5)";
+@mobile:      ~"only screen and (max-width: 529px)";
+@tablet:      ~"only screen and (min-width: 530px) and (max-width: 949px)";
+@desktop:     ~"only screen and (min-width: 950px) and (max-width: 1128px)";
+@desktop-xl:  ~"only screen and (min-width: 1129px)";
+
+body {
+  background-color: @main-dark;
+}
+
+hr {
+  border-top: 2px solid @sea-wave-dark;
+  height: 2px;
+  width: 50%;
+  @media @mobile {
+    width: 90%;
+  }
+}
+
+.wrap {
+  width: 100%;
+}
+
+.sea-wave {
+  color: @sea-wave;
+}
+
+::selection {
+  background: @sea-wave-dark;
+  color: #fff;
+}
+
+input, textarea {
+  outline: none;
+}
+
+::selection {
+  color: #fff;
+}
+
+h1,h2,h3,h4,h5,h6,p,span,label {
+  font-family: Ironstrike;
+  color: #fff;
+}
+
+button {
+  font-family: Ironstrike;
+}
+
+.navbar {
+  background-color: rgba(39, 40, 34, .95);
+  border: none;
+  min-height: 65px;
+  .navbar-nav li a {
+    padding-left: 25px;
+    padding-right: 25px;
+
+    min-height: 65px;
+    font-size: 1.5em;
+    font-family: Ironstrike;
+    line-height: 35px;
+
+    &:hover {
+      background-color: @light-black;
+    }
+  }
+  .navbar-nav .active a {
+    background-color: @light-black;
+    &:hover {
+      background-color: @light-black;
+    }
+  }
+}
+
+
+
+

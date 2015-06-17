@@ -1,0 +1,65 @@
+#login-popup {
+  margin-top: 5vh;
+  .btn {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  .modal-header {
+    border-bottom: none;
+    h4 {
+      font-size: 1.75em;
+    }
+  }
+  .modal-content {
+    border-radius: 0;
+    background-color: @main-dark;
+  }
+  .nav-tabs {
+    border-bottom: 2px solid @sea-wave;
+    a {
+      font-size: 1.3em;
+      margin-right: 0;
+    }
+    li {
+      width: 50%;
+      a {
+        border-radius: 0;
+        background-color: transparent;
+        color: #fff;
+        &:hover {
+          border: none;
+          background-color: #454f55;
+        }
+      }
+      &.active {
+        a {
+          border-radius: 0;
+          border: 2px solid @sea-wave;
+          border-bottom: none;
+          background-color: transparent;
+          color: #fff;
+        }
+      }
+    }
+  }
+  form {
+    .form-group {
+      &:first-child {
+        margin-top: 15px;
+      }
+    }
+    label {
+      font-weight: lighter;
+      font-size: 1.2em;
+    }
+    input {
+      border-radius: 0;
+      padding: 20px;
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      border-bottom: 2px solid #454f55;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@max-width: 450px;
+
+.test-page {
+  min-height: 100vh;
+  text-align: center;
+  h2 {
+    margin-top: 130px;
+    font-size: 3em;
+  }
+  h4 {
+    font-size: 1.75em;
+    margin-top: 50px;
+  }
+  form {
+    text-align: left;
+    display: inline-block;
+    width: 100%;
+    max-width: @max-width;
+    .form-group {
+      position: relative;
+      margin: 0 auto;
+      &:first-of-type {
+        margin-top: 20px;
+      }
+      &:last-of-type {
+        margin-bottom: 15px;
+      }
+    }
+    label {
+      font-weight: lighter;
+      font-size: 1.5em;
+      padding: 5px 15px 5px 15px;
+      background-color: #454f55;
+      width: 100%;
+      max-width: @max-width;
+      &:hover {
+        background-color: #58666c;
+      }
+    }
+    input[type="radio"] {
+      display: none;
+      &:checked + label {
+        background-color: @sea-wave-dark;
+      }
+    }
+  }
+  .btn {
+    margin-bottom: 70px;
+    width: 100%;
+    max-width: @max-width;
+  }
+  .arrows-container {
+    display: inline-block;
+    width: 100%;
+    max-width: @max-width;
+    margin-bottom: 20px;
+    .col {
+      padding: 0;
+    }
+    a {
+      color: #ccc;
+      margin-bottom: 10px;
+      display: block;
+      font-size: 1.1em;
+      &.prev {
+        text-align: left;
+      }
+      &.next {
+        text-align: right;
+      }
+    }
+  }
+}
