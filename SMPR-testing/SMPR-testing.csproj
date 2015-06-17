@@ -315,6 +315,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="ClassDiagram.cd" />
+    <None Include="Properties\PublishProfiles\tpr0 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\tpr0 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\tpr0.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />

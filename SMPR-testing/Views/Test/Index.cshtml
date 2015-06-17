@@ -13,7 +13,7 @@
 	<div id="top-wrapper" class="row">
 	    <div id="top" class="col-sm-12">
 	        @if (ViewBag.TestPassed) {
-	            <h2>Тест уже пройден</h2>
+	            <h2>Тест вже пройдений</h2>
 	        }
 	        else {
 	            <h2>Тест @DateTime.Now.Date.ToString("dd.MM.yyyy")</h2>
@@ -58,7 +58,7 @@
                  </div>
              </div>
              <div class="col-sm-12">
-                 <a class="btn btn-primary" id="respondBut" href="#">Ответить</a>
+                 <a class="btn btn-primary" id="respondBut" href="#">Відповісти</a>
              </div>
          </div>
          <!-- #content-wrapper-->
@@ -73,26 +73,32 @@
     
 </div><!-- #wrapper -->
 
+
 <script type="text/javascript">
-    $('.bxslider').bxSlider({
+    var bxslider = $('.bxslider').bxSlider({
         mode: 'fade',
         nextSelector: '.arrows-container .next',
         prevSelector: '.arrows-container .prev',
         prevText: 'Попередній',
         nextText: 'Наступний'
     });
-</script>
 
-<script type="text/javascript">// <![CDATA[
     $(document).ready(function () {
 
         var remainingQuestions = $('.bxslider form').length;
 
         $('#respondBut').click(function () {
+            var curBut = $(this);
+            //preventing one more click
+            curBut.attr("disabled", true);
+            setTimeout(function () {
+                curBut.attr("disabled", false);
+            }, 1500);
+
             var form = $('#wrapper li:visible form');
 
             if (form.hasClass('answered')) {
-                alert('Вы уже ответили на этот вопрос');
+                alert('Ви вже відповіли на це питання.');
                 return;
             }
 
@@ -109,8 +115,9 @@
             answer = answer.substring(0, answer.length - 1);
 
             $.post(form.data('url'), { answer: answer }, function (data) {
-                form.closest('li').fadeOut(300);
-                setTimeout('$(".bx-next").click();', 300);
+                setTimeout(function () {
+                    bxslider.goToNextSlide();
+                }, 300);
 
                 form.addClass('answered');
                 form.find('input[type=checkbox]').attr('disabled', true);
