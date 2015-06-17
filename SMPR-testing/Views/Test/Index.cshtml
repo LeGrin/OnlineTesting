@@ -1,11 +1,17 @@
 ﻿@model SMPR_testing.Models.TestModel
-
+@{
+    Layout = "~/Views/Shared/_NewLayout.cshtml";
+}
+<!-- jQuery library (served from Google) -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<!-- bxSlider Javascript file -->
+<script src="/Content/js/jquery.bxslider.min.js"></script>
 <body>
+    
+<div id="wrapper" class="container test-page">
 
-<div id="wrapper">
-
-	<div id="top-wrapper">
-	    <div id="top">
+	<div id="top-wrapper" class="row">
+	    <div id="top" class="col-sm-12">
 	        @if (ViewBag.TestPassed) {
 	            <h2>Тест уже пройден</h2>
 	        }
@@ -17,20 +23,22 @@
     </div><!-- #top-wrapper-->
     
      @if (!ViewBag.TestPassed) {
-         <div id="content-wrapper">
-             <div id="content">
+         <div id="wrapper" class="row">
+             <div id="content" class="col-sm-12">
                  <ul class="bxslider" 
                      data-closetest="@Url.Action("CloseTestForUser", "Test", 
                                                  new { userId = WebSecurity.CurrentUserId, testId = ViewBag.TestId })"
                      data-viewresults="@Url.Action("Index", "Profile", new { userId = WebSecurity.CurrentUserId })">
-	            
+	            @{
+         var index = 0;
+	            }
                      @foreach (var task in Model.Tasks) {
-                         <li>
+                         <li style="display:inline-block">
                              <form data-url="@Url.Action("Answer", "Test", new {taskId = task.Id})">
                                  <h3>@task.Question</h3>
                                  @foreach (var answer in task.Answers) {
-                                     <input name="answer" type="@(task.TaskType.Name == "Usual task" ? "checkbox" : "radio")"/>
-                                     <label>@answer.Text</label>
+                                     <input name="answer" id="@("answer" + (index).ToString())" type="@(task.TaskType.Name == "Много из многих" ? "checkbox" : "radio")"/>
+    <label for="@("answer" + (index++).ToString())">@answer.Text</label>
                                      <br />
                                  }
                              </form>
@@ -38,7 +46,19 @@
                      }
 
                  </ul>
-                 <a class="btn" id="respond" href="#">Ответить</a>
+             </div>
+             <div class="col-sm-12">
+                 <div class="row arrows-container">
+                     <div class="col col-xs-6 col-sm-6">
+                         <a class="prev" href="#"></a>
+                     </div>
+                     <div class="col col-xs-6 col-sm-6">
+                         <a class="next" href="#"></a>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-sm-12">
+                 <a class="btn btn-primary" id="respondBut" href="#">Ответить</a>
              </div>
          </div>
          <!-- #content-wrapper-->
@@ -51,12 +71,15 @@
       <div class="clr"></div>  
     </div><!-- #bottom-wrapper-->
     
-</div>
 </div><!-- #wrapper -->
 
 <script type="text/javascript">
     $('.bxslider').bxSlider({
-        mode: 'fade'
+        mode: 'fade',
+        nextSelector: '.arrows-container .next',
+        prevSelector: '.arrows-container .prev',
+        prevText: 'Попередній',
+        nextText: 'Наступний'
     });
 </script>
 
@@ -65,8 +88,8 @@
 
         var remainingQuestions = $('.bxslider form').length;
 
-        $('#respond').click(function () {
-            var form = $('#content-wrapper li:visible form');
+        $('#respondBut').click(function () {
+            var form = $('#wrapper li:visible form');
 
             if (form.hasClass('answered')) {
                 alert('Вы уже ответили на этот вопрос');

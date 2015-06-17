@@ -12,7 +12,9 @@ namespace SMPR_testing.Controllers {
                 ModelState.AddModelError("", TempData["LoginError"].ToString());
             }
 
-            return View();
+            ViewBag.IsUserAuthenticated = User.Identity.IsAuthenticated;
+
+            return View("NewIndex");
         }
 
         [Authorize(Roles = "lecturer")]

@@ -9,3 +9,15 @@
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\SMPR-testing-Lib\obj\Debug\SMPR-testing-Lib.dll
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\SMPR-testing-Lib\obj\Debug\SMPR-testing-Lib.pdb
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\SMPR-testing-Lib\obj\Debug\SMPR-testing-Lib.csprojResolveAssemblyReference.cache
+\\psf\Home\Desktop\Coding\University\OnlineTesting\SMPR-testing-Lib\bin\Debug\SMPR-testing-Lib.dll.config
+\\psf\Home\Desktop\Coding\University\OnlineTesting\SMPR-testing-Lib\bin\Debug\SMPR-testing-Lib.dll
+\\psf\Home\Desktop\Coding\University\OnlineTesting\SMPR-testing-Lib\bin\Debug\SMPR-testing-Lib.pdb
+\\psf\Home\Desktop\Coding\University\OnlineTesting\SMPR-testing-Lib\bin\Debug\EntityFramework.dll
+\\psf\Home\Desktop\Coding\University\OnlineTesting\SMPR-testing-Lib\bin\Debug\EntityFramework.SqlServer.dll
+\\psf\Home\Desktop\Coding\University\OnlineTesting\SMPR-testing-Lib\bin\Debug\System.Web.Mvc.dll
+\\psf\Home\Desktop\Coding\University\OnlineTesting\SMPR-testing-Lib\bin\Debug\EntityFramework.xml
+\\psf\Home\Desktop\Coding\University\OnlineTesting\SMPR-testing-Lib\bin\Debug\EntityFramework.SqlServer.xml
+\\psf\Home\Desktop\Coding\University\OnlineTesting\SMPR-testing-Lib\bin\Debug\System.Web.Mvc.xml
+\\psf\Home\Desktop\Coding\University\OnlineTesting\SMPR-testing-Lib\obj\Debug\SMPR-testing-Lib.csprojResolveAssemblyReference.cache
+\\psf\Home\Desktop\Coding\University\OnlineTesting\SMPR-testing-Lib\obj\Debug\SMPR-testing-Lib.dll
+\\psf\Home\Desktop\Coding\University\OnlineTesting\SMPR-testing-Lib\obj\Debug\SMPR-testing-Lib.pdb

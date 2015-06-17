@@ -228,6 +228,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\main.css" />
+    <Content Include="Content\img\Award.png" />
+    <Content Include="Content\img\bookshelf.jpg" />
     <Content Include="Content\img\btn-become-h.png" />
     <Content Include="Content\img\btn-become.png" />
     <Content Include="Content\img\btn-h.png" />
@@ -238,15 +242,19 @@
     <Content Include="Content\img\left.png" />
     <Content Include="Content\img\marker-h.png" />
     <Content Include="Content\img\marker.png" />
+    <Content Include="Content\img\Note-Memo.png" />
     <Content Include="Content\img\ok.jpg" />
     <Content Include="Content\img\right-h.png" />
     <Content Include="Content\img\right.png" />
     <Content Include="Content\css\jquery.bxslider.css" />
+    <Content Include="Content\img\Student-Laptop.png" />
     <Content Include="Content\img\true.jpg" />
+    <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\jquery.bxslider.js" />
     <Content Include="Content\js\jquery.bxslider.min.js" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\js\jquery.fancybox.js" />
+    <Content Include="Content\js\main.js" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -372,6 +380,8 @@
     <Content Include="Views\Profile\Index.cshtml" />
     <Content Include="Views\Test\QuestionList.cshtml" />
     <Content Include="Views\Test\_TaskAnswers.cshtml" />
+    <Content Include="Views\Shared\_NewLayout.cshtml" />
+    <Content Include="Views\Home\NewIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

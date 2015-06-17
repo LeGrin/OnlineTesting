@@ -1,4 +1,4 @@
-namespace SMPR_testing.Migrations
+п»їnamespace SMPR_testing.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
@@ -7,8 +7,8 @@ namespace SMPR_testing.Migrations
     {
         public override void Up()
         {
-            Sql("insert into [TaskTypes] values ('Один из двух')");
-            Sql("insert into [TaskTypes] values ('Один из многих')");
+            Sql("insert into [TaskTypes] values ('РњРЅРѕРіРѕ РёР· РјРЅРѕРіРёС…')");
+            Sql("insert into [TaskTypes] values ('РћРґРёРЅ РёР· РґРІСѓС…')");
         }
         
         public override void Down()

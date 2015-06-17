@@ -1,4 +1,4 @@
-namespace SMPR_testing.Migrations
+п»їnamespace SMPR_testing.Migrations
 {
     using System;
     using System.Data.Entity;
@@ -40,15 +40,15 @@ namespace SMPR_testing.Migrations
             //}
 
             //adding admin group
-            if (!(context.Groups.Where(x => x.Name == "Администраторы").Count() > 0))
+            if (!(context.Groups.Where(x => x.Name == "РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂС‹").Count() > 0))
             {
-                context.Groups.Add(new SMPR_testing_Lib.Domain.Group() { Name = "Администраторы" });
+                context.Groups.Add(new SMPR_testing_Lib.Domain.Group() { Name = "РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂС‹" });
                 context.SaveChanges();
             }
 
-            if (!(context.Groups.Where(x => x.Name == "Преподаватели").Count() > 0))
+            if (!(context.Groups.Where(x => x.Name == "РџСЂРµРїРѕРґР°РІР°С‚РµР»Рё").Count() > 0))
             {
-                context.Groups.Add(new SMPR_testing_Lib.Domain.Group() { Name = "Преподаватели" });
+                context.Groups.Add(new SMPR_testing_Lib.Domain.Group() { Name = "РџСЂРµРїРѕРґР°РІР°С‚РµР»Рё" });
                 context.SaveChanges();
             }
 
@@ -65,7 +65,7 @@ namespace SMPR_testing.Migrations
             {
                 Dictionary<string, object> values = new Dictionary<string, object>();
                 values.Add("Name", "superadmin");
-                values.Add("GroupId", context.Groups.Where(x => x.Name == "Администраторы").First().Id);
+                values.Add("GroupId", context.Groups.Where(x => x.Name == "РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂС‹").First().Id);
 
                 membership.CreateUserAndAccount("admin", "smpr2014",values);
                 #region Setting details of admin user in Users table

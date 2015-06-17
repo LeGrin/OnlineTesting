@@ -1,0 +1,427 @@
+@font-face {
+    font-family: Ironstrike;
+    src: url('../fonts/IronStrike/Ironstrike Light.otf');
+}
+
+@font-face {
+    font-family: Ironstrike-Bold;
+    src: url('../fonts/IronStrike/Ironstrike Bold.otf');
+}
+
+.first-screen .first-bg {
+    background-color: #272822;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
+.first-screen .main-screen-bg {
+    background: url("../img/bookshelf.jpg") no-repeat center center fixed #272822;
+    background-size: cover;
+    position: absolute;
+    opacity: 0.35;
+    width: 100%;
+    height: 100vh;
+}
+
+.first-screen .content {
+    height: 100vh;
+}
+
+.first-screen h1 {
+    text-align: center;
+    font-size: 4.5em;
+    margin-top: 35vh;
+}
+
+@media only screen and (max-width: 529px) {
+    .first-screen h1 {
+        margin-top: 15vh;
+    }
+}
+
+.first-screen h2 {
+    text-align: center;
+    font-size: 2.0em;
+    margin-bottom: 25px;
+}
+
+.first-screen .start-btn {
+    width: 240px;
+    position: relative;
+    left: 50%;
+    margin-left: -120px;
+}
+
+.btn {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 12px 50px;
+    font-size: 1.5em;
+    color: #fff;
+    min-width: 70px;
+}
+
+    .btn:focus {
+        outline: none;
+    }
+
+.btn-primary {
+    border: 2px #0cc solid;
+}
+
+    .btn-primary:hover {
+        border-color: #0cc;
+        background-color: #0cc;
+        color: #000000;
+    }
+
+    .btn-primary:active, .btn-primary.active {
+        border-color: #00b8b8;
+        background-color: #00b8b8;
+        outline: none;
+    }
+
+    .btn-primary:focus, .btn-primary:active {
+        color: #fff;
+        background: transparent;
+        border-color: #0cc;
+    }
+
+.btn-default {
+    border: 3px #fff solid;
+}
+
+    .btn-default:hover {
+        border: 3px #fff solid;
+        background-color: #fff;
+        color: #000000;
+    }
+
+.how-it-works {
+    margin-bottom: 30px;
+    margin-top: 35px;
+}
+
+    .how-it-works h2 {
+        color: #fff;
+        text-align: center;
+        font-size: 3.5em;
+        margin-bottom: 15px;
+    }
+
+    .how-it-works img {
+        position: relative;
+        margin-left: -64px;
+        left: 50%;
+    }
+
+    .how-it-works p {
+        font-size: 1.7em;
+        text-align: center;
+    }
+
+.wrap.about {
+    background-color: #454f55;
+    margin-bottom: 40px;
+}
+
+.about {
+    margin-top: 60px;
+}
+
+    .about h2 {
+        color: #fff;
+        margin-top: 60px;
+        text-align: center;
+        font-size: 3.5em;
+        margin-bottom: 5px;
+    }
+
+    .about p {
+        font-size: 1.3em;
+        text-align: center;
+        max-width: 75%;
+        margin: 20px auto;
+    }
+
+    .about .text:last-child {
+        margin-bottom: 50px;
+    }
+
+footer {
+    background-color: #272822;
+}
+
+    footer p {
+        text-align: center;
+        font-size: 1.25em;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+        footer p a {
+            color: #0cc;
+        }
+
+            footer p a:hover {
+                color: #00b8b8;
+            }
+
+            footer p a:visited {
+                color: #0cc;
+            }
+
+.participants {
+    margin-bottom: 45px;
+}
+
+    .participants h2 {
+        color: #fff;
+        text-align: center;
+        font-size: 3.5em;
+        margin-bottom: 25px;
+    }
+
+    .participants h4 {
+        font-size: 2em;
+        text-align: center;
+    }
+
+#login-popup {
+    margin-top: 5vh;
+}
+
+    #login-popup .btn {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    #login-popup .modal-header {
+        border-bottom: none;
+    }
+
+        #login-popup .modal-header h4 {
+            font-size: 1.75em;
+        }
+
+    #login-popup .modal-content {
+        border-radius: 0;
+        background-color: #31383c;
+    }
+
+    #login-popup .nav-tabs {
+        border-bottom: 2px solid #0cc;
+    }
+
+        #login-popup .nav-tabs a {
+            font-size: 1.3em;
+            margin-right: 0;
+        }
+
+        #login-popup .nav-tabs li {
+            width: 50%;
+        }
+
+            #login-popup .nav-tabs li a {
+                border-radius: 0;
+                background-color: transparent;
+                color: #fff;
+            }
+
+                #login-popup .nav-tabs li a:hover {
+                    border: none;
+                    background-color: #454f55;
+                }
+
+            #login-popup .nav-tabs li.active a {
+                border-radius: 0;
+                border: 2px solid #0cc;
+                border-bottom: none;
+                background-color: transparent;
+                color: #fff;
+            }
+
+    #login-popup form .form-group:first-child {
+        margin-top: 15px;
+    }
+
+    #login-popup form label {
+        font-weight: lighter;
+        font-size: 1.2em;
+    }
+
+    #login-popup form input {
+        border-radius: 0;
+        padding: 20px;
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        border-bottom: 2px solid #454f55;
+    }
+
+.test-page {
+    min-height: 100vh;
+    text-align: center;
+}
+
+    .test-page h2 {
+        margin-top: 130px;
+        font-size: 3em;
+    }
+
+    .test-page h4 {
+        font-size: 1.75em;
+        margin-top: 50px;
+    }
+
+    .test-page form {
+        text-align: left;
+        display: inline-block;
+        width: 100%;
+        max-width: 750px;
+    }
+
+        .test-page form .form-group {
+            position: relative;
+            margin: 0 auto;
+        }
+
+            .test-page form .form-group:first-of-type {
+                margin-top: 20px;
+            }
+
+            .test-page form .form-group:last-of-type {
+                margin-bottom: 15px;
+            }
+
+        .test-page form label {
+            font-weight: lighter;
+            font-size: 1.5em;
+            padding: 5px 15px 5px 15px;
+            background-color: #454f55;
+            width: 100%;
+            max-width: 750px;
+        }
+
+            .test-page form label:hover {
+                background-color: #58666c;
+            }
+
+        .test-page form input[type="radio"] {
+            display: none;
+        }
+        .test-page form input[type="checkbox"] {
+            display: none;
+        }
+            .test-page form input[type="radio"]:checked + label {
+                background-color: #00b8b8;
+            }
+            .test-page form input[type="checkbox"]:checked + label {
+                background-color: #00b8b8;
+            }
+    .test-page .btn {
+        margin-bottom: 70px;
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .test-page .arrows-container {
+        display: inline-block;
+        width: 100%;
+        max-width: 450px;
+        margin-bottom: 20px;
+    }
+
+        .test-page .arrows-container .col {
+            padding: 0;
+        }
+
+        .test-page .arrows-container a {
+            color: #ccc;
+            margin-bottom: 10px;
+            display: block;
+            font-size: 1.1em;
+        }
+
+            .test-page .arrows-container a.prev {
+                text-align: left;
+            }
+
+            .test-page .arrows-container a.next {
+                text-align: right;
+            }
+
+body {
+    background-color: #31383c;
+}
+
+hr {
+    border-top: 2px solid #00b8b8;
+    height: 2px;
+    width: 50%;
+}
+
+@media only screen and (max-width: 529px) {
+    hr {
+        width: 90%;
+    }
+}
+
+.wrap {
+    width: 100%;
+}
+
+.sea-wave {
+    color: #0cc;
+}
+
+::selection {
+    background: #00b8b8;
+    color: #fff;
+}
+
+input, textarea {
+    outline: none;
+}
+
+::selection {
+    color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, label {
+    font-family: Ironstrike;
+    color: #fff;
+}
+
+button {
+    font-family: Ironstrike;
+}
+
+.navbar {
+    background-color: rgba(39,40,34,0.95);
+    border: none;
+    min-height: 65px;
+}
+
+    .navbar .navbar-nav li a {
+        padding-left: 25px;
+        padding-right: 25px;
+        min-height: 65px;
+        font-size: 1.5em;
+        font-family: Ironstrike;
+        line-height: 35px;
+    }
+
+        .navbar .navbar-nav li a:hover {
+            background-color: #272822;
+        }
+
+    .navbar .navbar-nav .active a {
+        background-color: #272822;
+    }
+
+        .navbar .navbar-nav .active a:hover {
+            background-color: #272822;
+        }

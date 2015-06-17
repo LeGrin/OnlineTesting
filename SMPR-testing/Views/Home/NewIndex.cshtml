@@ -1,0 +1,139 @@
+﻿@{
+    ViewBag.Title = "Theory of Decision Making";
+    Layout = "~/Views/Shared/_NewLayout.cshtml";
+}
+
+<!-- Login/sign up popup -->
+<div class="modal fade" id="login-popup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Greetings, student!</h4>
+            </div>
+            <div class="modal-body">
+                <div role="tabpanel">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#log-in" aria-controls="home" role="tab" data-toggle="tab">Log in</a></li>
+                        <li role="presentation"><a href="#sign-up" aria-controls="profile" role="tab" data-toggle="tab">Sign up</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="log-in">
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <label for="inputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="inputEmail1" placeholder="example@ukr.net">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="inputPassword1" placeholder="myCat Justin">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="sign-up">
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <label for="inputName">Name</label>
+                                    <input type="email" class="form-control" id="inputName" placeholder="Dmytro Yarosh">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail2">Email address</label>
+                                    <input type="email" class="form-control" id="inputEmail2" placeholder="example@ukr.net">
+                                </div>
+                                <!-- todo: don't forget to check passwords are they same or not -->
+                                <div class="form-group">
+                                    <label for="inputPassword2">Password</label>
+                                    <input type="password" class="form-control" id="inputPassword2" placeholder="myCat Justin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword3">Repeat password</label>
+                                    <input type="password" class="form-control" id="inputPassword3" placeholder="myCat Justin">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">HOME <span class="sr-only">(current)</span></a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div class="first-screen">
+    <div class="container-fluid first-bg"></div>
+    <div class="container-fluid main-screen-bg"></div>
+    <div class="container content">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <h1>FREE TESTING TOOL</h1>
+                <h2>test your skills <span class="sea-wave">and</span> knowledge</h2>
+            </div>
+            <div class="col-xs-12">
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <a class="btn btn-primary start-btn" href="@Url.Action("Register", "Account")">START NOW</a>
+                }
+                else
+                {
+                    <a class="btn btn-primary start-btn" href="@Url.Action("Index", "Test")">START TEST</a>
+                }
+                @*<button class="btn btn-primary start-btn" data-toggle="modal" data-target="#login-popup">START NOW</button>*@
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container how-it-works">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>HOW IT WORKS</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-4">
+            <img src="Content/img/Student-Laptop.png">
+            <p>Register</p>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <img src="Content/img/Note-Memo.png">
+            <p>Complete test</p>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <img src="Content/img/Award.png">
+            <p>Check results</p>
+        </div>
+    </div>
+</div>
+<footer class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <p>Theory of decision making</p>
+        </div>
+    </div>
+</footer>

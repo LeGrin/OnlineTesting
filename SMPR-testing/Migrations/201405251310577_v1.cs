@@ -1,4 +1,4 @@
-namespace SMPR_testing.Migrations
+Ôªønamespace SMPR_testing.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
@@ -8,7 +8,7 @@ namespace SMPR_testing.Migrations
         public override void Up()
         {
             Sql("insert into [Groups] values ('TK-3')");
-            Sql("insert into [Groups] values ('““œ-3')");
+            Sql("insert into [Groups] values ('–¢–¢–ü-3')");
             Sql("insert into [Groups] values ('MI-3')");
         }
         
