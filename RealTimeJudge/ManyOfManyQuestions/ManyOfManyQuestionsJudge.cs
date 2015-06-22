@@ -40,6 +40,8 @@ namespace RealTimeJudge.ManyOfManyQuestions
             // for the first student mark we assume that the questions have initialQuestionsComplexity
             // and the previous student had the maxMark Є [0, 1]
             questionsComplexity[0] = EvaluateCurrentStudentQuestionsComplexity(initialQuestionsComplexity, 1, answers.First());
+            marks.Add(new PriceData());
+
             marks[0].Price = EvaluateCurrentStudentMark(questionsComplexity[0], answers.First());
 
             for (var j = 1; j < NumberOfStudents; ++j)
@@ -49,7 +51,7 @@ namespace RealTimeJudge.ManyOfManyQuestions
                         questionsComplexity[j - 1],
                         marks[j - 1].Price,
                         answers[j]);
-
+                marks.Add(new PriceData());
                 marks[j].Price = EvaluateCurrentStudentMark(questionsComplexity[j], answers[j]);
             }
 

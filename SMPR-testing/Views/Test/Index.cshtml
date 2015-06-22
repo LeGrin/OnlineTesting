@@ -6,6 +6,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <!-- bxSlider Javascript file -->
 <script src="/Content/js/jquery.bxslider.min.js"></script>
+
 <body>
     
 <div id="wrapper" class="container test-page">
@@ -16,8 +17,22 @@
 	            <h2>Тест вже пройдений</h2>
 	        }
 	        else {
-	            <h2>Тест @DateTime.Now.Date.ToString("dd.MM.yyyy")</h2>
-         }
+	            <h2>Теорія Прийняття Рішень 2015</h2>
+                <h3 id="time"></h3>
+                <script>
+                    window.setInterval("Timer()", 1000);
+                    function Timer() {
+                        var elem = document.getElementById('time');
+                        var dif = (new Date("@ViewBag.SessionEnd") - new Date()) / 1000;
+                        var seconds = dif % 60;
+                        var minutes = ((dif - seconds) % 3600) / 60;
+                        var hours = (dif - seconds - minutes * 60) / 3600;
+                        var result = (LeadingZero(hours) + ":" + LeadingZero(minutes) + ":" + LeadingZero(Math.floor(seconds)));
+                        elem.innerHTML = result;
+                        if (result == "00:00:00" || result.indexOf("-") != -1) location.reload(true);}
+                    function LeadingZero(Time) {return (Time < 10) ? "0" + Time : +Time; }
+                </script>
+            }
 	    </div>
         <div class="clr"></div>  
     </div><!-- #top-wrapper-->
@@ -35,7 +50,7 @@
                      @foreach (var task in Model.Tasks) {
                          <li style="display:inline-block">
                              <form data-url="@Url.Action("Answer", "Test", new {taskId = task.Id})">
-                                 <h3>@task.Question</h3>
+                                 <h3>@task.Question @(task.TaskType.Name == "Много из многих" ? "(декілька правильних відповідей)" : "")</h3>
                                  @foreach (var answer in task.Answers) {
                                      <input name="answer" id="@("answer" + (index).ToString())" type="@(task.TaskType.Name == "Много из многих" ? "checkbox" : "radio")"/>
     <label for="@("answer" + (index++).ToString())">@answer.Text</label>

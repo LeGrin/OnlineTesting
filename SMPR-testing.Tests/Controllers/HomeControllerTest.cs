@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SMPR_testing;
+﻿using System.Web.Mvc;
 using SMPR_testing.Controllers;
 
 namespace SMPR_testing.Tests.Controllers

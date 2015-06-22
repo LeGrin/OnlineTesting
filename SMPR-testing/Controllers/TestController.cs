@@ -33,6 +33,7 @@ namespace SMPR_testing.Controllers
 
             var test = new TestModel { Tasks = new List<TaskModel>() };
             var tasks = _repository.Tasks.Where(x => x.TestId == testId && !taskAnsweredIds.Contains(x.Id)).ToList();
+            var SessionEnd = _repository.Sessions.Select(x => x.EndDate).FirstOrDefault();
 
             foreach (var task in tasks)
             {
@@ -58,6 +59,7 @@ namespace SMPR_testing.Controllers
             }
 
             ViewBag.TestId = testId;
+            ViewBag.SessionEnd = SessionEnd;
 
             return View(test);
         }
@@ -231,19 +233,20 @@ namespace SMPR_testing.Controllers
         public bool IsSessionActive()
         {
             var session = _repository.Sessions.FirstOrDefault();
-            var now = DateTime.Now;
+            var now = DateTime.UtcNow;
+            var gmt = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(now, "E. Europe Standard Time");
 
-            if (now >= session.StartDate && now <= session.EndDate)
+            if (gmt >= session.StartDate && gmt <= session.EndDate)
                 return true;
 
             return false;
         }
 
         [HttpPost]
-        public JsonResult CloseTestForUser(int userId, int testId)
+        public JsonResult CloseTestForUser(int userId, int testId, DateTime now)
         {
             var taskIds = _repository.PricesData.Where(x => x.UserId == userId).Distinct();
-            if (_repository.Tasks.Count() == taskIds.Count())
+            if (_repository.Tasks.Count() == taskIds.Count() && IsSessionActive() == true)
             {
                 var passedTest = _repository.PassedTests.FirstOrDefault(x => x.UserId == userId && x.TestId == testId);
 
