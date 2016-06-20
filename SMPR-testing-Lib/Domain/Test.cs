@@ -46,7 +46,22 @@ namespace SMPR_testing_Lib.Domain
         /// </summary>
         [Required]
         [Range(0, double.MaxValue)]
-        public double Price { get; set; }
+		public double Price { get; set; }
+		[NotMapped]
+		public double GPriceTest {
+			get {
+				return Price;
+			}
+			set {
+				if (value < 0)
+					value = 0;
+				if (value > double.MaxValue)
+					value = double.MaxValue;
+				if (double.IsNaN(value))
+					value = 0;
+				Price = value;
+			}
+		}
 
         public virtual User User { get; set; }
 

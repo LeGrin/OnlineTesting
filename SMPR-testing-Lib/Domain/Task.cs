@@ -40,9 +40,20 @@ namespace SMPR_testing_Lib.Domain
         /// <summary>
         /// Цена вопроса, задается преподом
         /// </summary>
-        [Range(1, double.MaxValue)]
         public double Price { get; set; }
-
+		[NotMapped]
+		public double PriceTask {
+			get {
+				return Price;
+			}
+			set {
+				if (value < 0)
+					value = 0;
+				if (double.IsNaN(value))
+					value = 0;			
+				Price = value;
+			}
+		}
         public virtual TaskType TaskType { get; set; }
 
         public virtual ICollection<PriceData> PricesData { get; set; }

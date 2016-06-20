@@ -125,7 +125,7 @@ namespace SMPRShedulerService
 
         private Tuple<IEnumerable<PriceData>, IList<SMPR_testing_Lib.Domain.Task>> EvaluateManyOfManyQuestions(Session session, IQueryable<SMPR_testing_Lib.Domain.Task> tasks)
         {
-            double maxMarkForQuestionBlock = tasks.Sum(x => x.Price);
+            double maxMarkForQuestionBlock = tasks.Sum(x => x.PriceTask);
             IList<IList<IList<Student_Answer>>> studAnswers = new List<IList<IList<Student_Answer>>>();
             //<student<task<student_answer>>>
             foreach (var student in session.Group.Users)
@@ -148,7 +148,7 @@ namespace SMPRShedulerService
 
         private Tuple<IEnumerable<PriceData>, IList<SMPR_testing_Lib.Domain.Task>> EvaluateYesNoQuestions(Session session, IQueryable<SMPR_testing_Lib.Domain.Task> tasks)
         {
-            double maxMarkForQuestionBlock = tasks.Sum(x => x.Price);
+            double maxMarkForQuestionBlock = tasks.Sum(x => x.PriceTask);
             IList<IList<Student_Answer>> studAnswers = new List<IList<Student_Answer>>();
             foreach (var student in session.Group.Users)
             {
@@ -171,7 +171,7 @@ namespace SMPRShedulerService
 
         private Tuple<IEnumerable<PriceData>, IList<SMPR_testing_Lib.Domain.Task>> EvaluateOneOfManyQuestions(Session session, IQueryable<SMPR_testing_Lib.Domain.Task> tasks)
         {
-            double maxMarkForQuestionBlock = tasks.Sum(x => x.Price);
+            double maxMarkForQuestionBlock = tasks.Sum(x => x.PriceTask);
             IList<IList<Student_Answer>> studAnswers = new List<IList<Student_Answer>>();
             foreach (var student in session.Group.Users)
             {
