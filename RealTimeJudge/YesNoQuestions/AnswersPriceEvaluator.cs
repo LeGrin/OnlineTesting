@@ -20,7 +20,7 @@ namespace RealTimeJudge.YesNoQuestions
         {
             // answers - for each student his answers for each task
 
-            var initialQuestionsComplexity = tasks.Select(task => task.Price / maxMark).ToList();
+            var initialQuestionsComplexity = tasks.Select(task => task.PriceTask / maxMark).ToList();
 
             // initial possible variants of the answer for a question
             IList<IList<Answer>> tasksVariants = new List<IList<Answer>>(tasks.Count);

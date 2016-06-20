@@ -21,3 +21,16 @@
 \\psf\Home\Desktop\Coding\University\OnlineTesting\SMPR-testing-Lib\obj\Debug\SMPR-testing-Lib.csprojResolveAssemblyReference.cache
 \\psf\Home\Desktop\Coding\University\OnlineTesting\SMPR-testing-Lib\obj\Debug\SMPR-testing-Lib.dll
 \\psf\Home\Desktop\Coding\University\OnlineTesting\SMPR-testing-Lib\obj\Debug\SMPR-testing-Lib.pdb
+E:\github\OnlineTesting\SMPR-testing-Lib\bin\Debug\SMPR-testing-Lib.dll.config
+E:\github\OnlineTesting\SMPR-testing-Lib\bin\Debug\SMPR-testing-Lib.dll
+E:\github\OnlineTesting\SMPR-testing-Lib\bin\Debug\SMPR-testing-Lib.pdb
+E:\github\OnlineTesting\SMPR-testing-Lib\bin\Debug\EntityFramework.dll
+E:\github\OnlineTesting\SMPR-testing-Lib\bin\Debug\EntityFramework.SqlServer.dll
+E:\github\OnlineTesting\SMPR-testing-Lib\bin\Debug\EntityFramework.xml
+E:\github\OnlineTesting\SMPR-testing-Lib\bin\Debug\EntityFramework.SqlServer.xml
+E:\github\OnlineTesting\SMPR-testing-Lib\bin\Debug\System.Web.Mvc.xml
+E:\github\OnlineTesting\SMPR-testing-Lib\obj\Debug\SMPR-testing-Lib.csprojResolveAssemblyReference.cache
+E:\github\OnlineTesting\SMPR-testing-Lib\obj\Debug\SMPR-testing-Lib.dll
+E:\github\OnlineTesting\SMPR-testing-Lib\obj\Debug\SMPR-testing-Lib.pdb
+E:\github\OnlineTesting\SMPR-testing-Lib\obj\Debug\SMPR_testing_Lib.Migrations.InitialModel.resources
+E:\github\OnlineTesting\SMPR-testing-Lib\obj\Debug\SMPR-testing-Lib.csproj.GenerateResource.Cache
