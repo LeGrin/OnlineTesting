@@ -63,12 +63,12 @@ namespace RealTimeJudge.OneOfManyQuestions
 
                 foreach (var answer in taskAnswers.Where(ti => ti.Text == answers[0][i].GivenAnswer))
                 {
-                    previousStudentEachQuestionMarks.Add(answer.PriceAnswer);
+                    previousStudentEachQuestionMarks.Add(answer.Price);
                     break;
                 }
             }
 
-			marks[0].PricePriceData = EvaluateCurrentStudentMark(
+            marks[0].Price = EvaluateCurrentStudentMark(
                 questionsComplexity[0], 
                 previousStudentEachQuestionMarks);
 
@@ -84,10 +84,10 @@ namespace RealTimeJudge.OneOfManyQuestions
                 questionsComplexity[j] =
                     EvaluateCurrentStudentQuestionsComplexity(
                         questionsComplexity[j - 1],
-						marks[j - 1].PricePriceData,
+                        marks[j - 1].Price,
                         previousStudentEachQuestionMarks);
 
-				marks[j].PricePriceData = EvaluateCurrentStudentMark(
+                marks[j].Price = EvaluateCurrentStudentMark(
                     questionsComplexity[j], 
                     previousStudentEachQuestionMarks);
 
@@ -100,12 +100,12 @@ namespace RealTimeJudge.OneOfManyQuestions
             
             for (var i = 0; i < NumberOfOneOfManyQuestions; ++i)
             {
-                tasks[i].PriceTask = questionsComplexity[NumberOfOneOfManyQuestions - 1][i] * MaxMark;
+                tasks[i].Price = questionsComplexity[NumberOfOneOfManyQuestions - 1][i] * MaxMark;
             }
 
             for (var i = 0; i < NumberOfStudents; ++i)
             {
-                marks[i].PricePriceData = MaxMark * EvaluateCurrentStudentMark(
+                marks[i].Price = MaxMark * EvaluateCurrentStudentMark(
                     questionsComplexity.Last(), 
                     previousStudentEachQuestionMarks);
             }

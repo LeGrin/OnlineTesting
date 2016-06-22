@@ -20,13 +20,14 @@ namespace RealTimeJudge.OneOfManyQuestions
         {
             // answers - for each student his answers for each task
             
-            var initialQuestionsComplexity = tasks.Select(task => task.PriceTask / maxMark).ToList();
+            var initialQuestionsComplexity = tasks.Select(task => task.Price / maxMark).ToList();
             
             // initial price of each possible variant of the answer for a question
             IList<IList<double>> tasksVariantsPrice = new List<IList<double>>(tasks.Count);
 
             foreach (var task in tasks)
             {
+                tasksVariantsPrice.Add(task.Answers.Select(answer => answer.Price).ToList());
             }
 
             var numberOfStudents = answers.Count();

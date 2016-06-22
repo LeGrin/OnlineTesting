@@ -34,34 +34,36 @@ namespace RealTimeJudge.YesNoQuestions
             IList<Task> tasks,
             IList<PriceData> marks)
         {
-			if (marks.Any() && tasks.Any()) {
-				_tasksVariants = tasksVariants;
-				var questionsComplexity = new double[NumberOfStudents][];
+            _tasksVariants = tasksVariants;
+            var questionsComplexity = new double[NumberOfStudents][];
 
-				// for the first student mark we assume that the questions have initialQuestionsComplexity
-				// and the previous student had the maxMark Є [0, 1]
-				questionsComplexity[0] = EvaluateCurrentStudentQuestionsComplexity(initialQuestionsComplexity, 1, answers.First());
-				marks[0].PricePriceData = EvaluateCurrentStudentMark(questionsComplexity[0], answers.First());
+            // for the first student mark we assume that the questions have initialQuestionsComplexity
+            // and the previous student had the maxMark Є [0, 1]
+            questionsComplexity[0] = EvaluateCurrentStudentQuestionsComplexity(initialQuestionsComplexity, 1, answers.First());
+            marks[0].Price = EvaluateCurrentStudentMark(questionsComplexity[0], answers.First());
 
-				for (var j = 1; j < NumberOfStudents; ++j) {
-					questionsComplexity[j] =
-						EvaluateCurrentStudentQuestionsComplexity(
-							questionsComplexity[j - 1],
-							marks[j - 1].PricePriceData,
-							answers[j]);
+            for (var j = 1; j < NumberOfStudents; ++j)
+            {
+                questionsComplexity[j] = 
+                    EvaluateCurrentStudentQuestionsComplexity(
+                        questionsComplexity[j - 1],
+                        marks[j - 1].Price,
+                        answers[j]);
 
-					marks[j].PricePriceData = EvaluateCurrentStudentMark(questionsComplexity[j], answers[j]);
-				}
+                marks[j].Price = EvaluateCurrentStudentMark(questionsComplexity[j], answers[j]);
+            }
 
-				for (var i = 0; i < NumberOfYesNoQuestions; ++i) {
-					tasks[i].PriceTask = questionsComplexity[NumberOfYesNoQuestions - 1][i] * MaxMark;
-				}
+            for (var i = 0; i < NumberOfYesNoQuestions; ++i)
+            {
+                tasks[i].Price = questionsComplexity[NumberOfYesNoQuestions - 1][i] * MaxMark;
+            }
 
-				// to evaluate result marks we use questionsComplexity evaluated at the last step
-				for (var i = 0; i < NumberOfStudents; ++i) {
-					marks[i].PricePriceData = MaxMark * EvaluateCurrentStudentMark(questionsComplexity.Last(), answers[i]);
-				}
-			}
+            // to evaluate result marks we use questionsComplexity evaluated at the last step
+            for (var i = 0; i < NumberOfStudents; ++i)
+            {
+                marks[i].Price = MaxMark * EvaluateCurrentStudentMark(questionsComplexity.Last(), answers[i]);
+            }
+
             return new Tuple<IEnumerable<PriceData>, IList<Task>>(marks, tasks);
         }
 

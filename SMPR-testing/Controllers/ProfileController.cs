@@ -45,7 +45,7 @@ namespace SMPR_testing.Controllers
             {
                 var answerToShow = new AnswerToShow();
                 answerToShow.Question = studentAnswer.PriceData.Task.Name;
-                answerToShow.Price = studentAnswer.PriceData.PricePriceData;
+                answerToShow.Price = studentAnswer.PriceData.Price;
                 answerToShow.Answer = studentAnswer.GivenAnswer;
 
                 int taskId = studentAnswer.PriceData.TaskId;
@@ -74,8 +74,8 @@ namespace SMPR_testing.Controllers
             var answers = _repository.Student_Answers.Where(x => x.PriceData.Task.TestId == testId);
             var students = answers.GroupBy(x => x.PriceData.User).ToList();
             var statistic = new List<StudentShortStatistic>();
-            double maxMarkForText = _repository.Tests.Where(x => x.Id == testId).First().GPriceTest;
-            double maxMarkForQuestions = _repository.Tests.Where(x => x.Id == testId).First().Tasks.Sum(t => t.PriceTask);
+            double maxMarkForText = _repository.Tests.Where(x => x.Id == testId).First().Price;
+            double maxMarkForQuestions = _repository.Tests.Where(x => x.Id == testId).First().Tasks.Sum(t => t.Price);
 
             foreach (var studentAnswers in students) {
                 var name = studentAnswers.Key.Name;
@@ -86,7 +86,7 @@ namespace SMPR_testing.Controllers
                     x =>
                     _repository.Answers.FirstOrDefault(y => y.TaskId == x.PriceData.TaskId && y.Text == x.GivenAnswer);
 
-				double resultMarkForStudent = studentAnswers.Sum(x => x.PriceData.PricePriceData);
+                double resultMarkForStudent = studentAnswers.Sum(x => x.PriceData.Price);
 
                 var studStat = new StudentShortStatistic {
                     Id = studId,

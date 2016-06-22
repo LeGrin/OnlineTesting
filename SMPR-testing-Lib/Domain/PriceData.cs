@@ -48,21 +48,6 @@ namespace SMPR_testing_Lib.Domain
         /// </summary>
         [Required]
         [Range(0, 1)]
-		public double Price { get; set; }
-		[NotMapped]
-		public double PricePriceData {
-			get {
-				return Price;
-			}
-			set {
-				if (value < 0)
-					value = 0;
-				if (value > 1)
-					value = 1;
-				if (double.IsNaN(value))
-					value = 0;
-				Price = value;
-			}
-		}
+        public double Price { get; set; }
     }
 }

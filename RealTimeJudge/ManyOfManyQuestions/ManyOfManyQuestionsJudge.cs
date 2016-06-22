@@ -42,23 +42,27 @@ namespace RealTimeJudge.ManyOfManyQuestions
             questionsComplexity[0] = EvaluateCurrentStudentQuestionsComplexity(initialQuestionsComplexity, 1, answers.First());
             marks.Add(new PriceData());
 
+            marks[0].Price = EvaluateCurrentStudentMark(questionsComplexity[0], answers.First());
 
             for (var j = 1; j < NumberOfStudents; ++j)
             {
                 questionsComplexity[j] =
                     EvaluateCurrentStudentQuestionsComplexity(
                         questionsComplexity[j - 1],
+                        marks[j - 1].Price,
                         answers[j]);
                 marks.Add(new PriceData());
+                marks[j].Price = EvaluateCurrentStudentMark(questionsComplexity[j], answers[j]);
             }
 
             for (var i = 0; i < NumberOfManyOfManyQuestions; ++i)
             {
-                tasks[i].PriceTask = questionsComplexity[NumberOfManyOfManyQuestions - 1][i] * MaxMark;
+                tasks[i].Price = questionsComplexity[NumberOfManyOfManyQuestions - 1][i] * MaxMark;
             }
 
             for (var i = 0; i < NumberOfStudents; ++i)
             {
+                marks[i].Price = MaxMark * EvaluateCurrentStudentMark(questionsComplexity.Last(), answers[i]);
             }
 
             return new Tuple<IEnumerable<PriceData>, IList<Task>>(marks, tasks);
@@ -75,6 +79,7 @@ namespace RealTimeJudge.ManyOfManyQuestions
 
             for (var i = 0; i < NumberOfManyOfManyQuestions; ++i)
             {
+                var correctAnswers = _tasksVariants[i].Where(answer => answer.Price > 0).ToList();
                 bp.Add(correctAnswers.Count);
                 var incorrectAnswers = _tasksVariants[i].Except(correctAnswers).ToList();
                 bq.Add(_tasksVariants[i].Count - bp[i]);
@@ -84,6 +89,7 @@ namespace RealTimeJudge.ManyOfManyQuestions
                 {
                     correctAnswersSum +=
                         currentStudentAnswers[i].Select(answer => answer.GivenAnswer).Contains(correctAnswers[j].Text)
+                            ? correctAnswers[j].Price
                             : 0;
                 }
 
@@ -112,6 +118,7 @@ namespace RealTimeJudge.ManyOfManyQuestions
 
             for (var i = 0; i < NumberOfManyOfManyQuestions; ++i)
             {
+                var correctAnswers = _tasksVariants[i].Where(answer => answer.Price > 0).ToList();
                 var incorrectAnswers = _tasksVariants[i].Except(correctAnswers).ToList();
                 double correctAnswersSum = 0, incorrectAnswersSum = 0;
 
@@ -119,6 +126,7 @@ namespace RealTimeJudge.ManyOfManyQuestions
                 {
                     correctAnswersSum +=
                         currentStudentAnswers[i].Select(answer => answer.GivenAnswer).Contains(correctAnswers[j].Text)
+                            ? correctAnswers[j].Price
                             : 0;
                 }
 
@@ -131,17 +139,12 @@ namespace RealTimeJudge.ManyOfManyQuestions
                 }
 
                 currentComplexity += currentStudentQuestionsComplexity[i] *
+                    (correctAnswersSum - correctAnswers.Select(answer => answer.Price).Min() * incorrectAnswersSum) 
                     / _tasksVariants[i].Count; 
                 totalComplexity += currentStudentQuestionsComplexity[i];
             }
-			return SafeDivision(currentComplexity / totalComplexity);
+
+            return currentComplexity / totalComplexity;
         }
-		public double SafeDivision(double divide, double min = 0, double max = 1) {
-			if (divide < min)
-				return min;
-			if (divide > max)
-				return max;
-			return divide;
-		}
     }
 }
