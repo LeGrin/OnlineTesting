@@ -1,2 +1,6 @@
 /SMPR-testing/bin
 /SMPR-testing/obj
+*.dll
+*.exe
+*.config
+*.manifest
