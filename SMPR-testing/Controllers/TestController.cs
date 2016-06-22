@@ -73,7 +73,7 @@ namespace SMPR_testing.Controllers
                 SessionId = _repository.Sessions.FirstOrDefault().Id,
                 UserId = WebSecurity.CurrentUserId,
                 TaskId = taskId,
-                Price = 0
+                PricePriceData = 0
             };
 
             _repository.SavePriceData(priceData);
@@ -175,7 +175,7 @@ namespace SMPR_testing.Controllers
                 TestId = model.TestId,
                 Name = model.Question,
                 TaskTypeId = model.TaskTypeId,
-                Price = model.Price
+                PriceTask = model.Price
             });
             var task = _repository.Tasks.FirstOrDefault(x => x.TestId == model.TestId && x.Name == model.Question);
 
@@ -191,7 +191,7 @@ namespace SMPR_testing.Controllers
                     TaskId = task.Id,
                     Text = model.Answers[i],
                     IsCorrect = model.IsCorrect[i],
-                    Price = (model.IsCorrect[i] ? correctAnswerPrice : noncorrectAnswerPrice)
+                    PriceAnswer = (model.IsCorrect[i] ? correctAnswerPrice : noncorrectAnswerPrice)
                 });
             }
 
