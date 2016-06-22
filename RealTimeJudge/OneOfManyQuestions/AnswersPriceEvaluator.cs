@@ -27,6 +27,7 @@ namespace RealTimeJudge.OneOfManyQuestions
 
             foreach (var task in tasks)
             {
+                tasksVariantsPrice.Add(task.Answers.Select(answer => answer.PriceAnswer).ToList());
             }
 
             var numberOfStudents = answers.Count();

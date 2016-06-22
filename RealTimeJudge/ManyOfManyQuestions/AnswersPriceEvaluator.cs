@@ -20,6 +20,7 @@ namespace RealTimeJudge.ManyOfManyQuestions
         {
             // answers: for each student variants he chosen for each task
             
+            var initialQuestionsComplexity = tasks.Select(task => task.PriceTask / maxMark).ToList();
             
             // initial price of each possible variant of the answer for a question
             IList<IList<Answer>> tasksVariants = new List<IList<Answer>>(tasks.Count);

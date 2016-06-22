@@ -8,3 +8,15 @@
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\RealTimeJudge\obj\Debug\RealTimeJudge.csprojResolveAssemblyReference.cache
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\RealTimeJudge\obj\Debug\RealTimeJudge.dll
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\RealTimeJudge\obj\Debug\RealTimeJudge.pdb
+E:\github\OnlineTesting\RealTimeJudge\bin\Debug\RealTimeJudge.dll.config
+E:\github\OnlineTesting\RealTimeJudge\bin\Debug\RealTimeJudge.dll
+E:\github\OnlineTesting\RealTimeJudge\bin\Debug\RealTimeJudge.pdb
+E:\github\OnlineTesting\RealTimeJudge\bin\Debug\SMPR-testing-Lib.dll
+E:\github\OnlineTesting\RealTimeJudge\bin\Debug\EntityFramework.dll
+E:\github\OnlineTesting\RealTimeJudge\bin\Debug\System.Web.Mvc.dll
+E:\github\OnlineTesting\RealTimeJudge\bin\Debug\SMPR-testing-Lib.pdb
+E:\github\OnlineTesting\RealTimeJudge\bin\Debug\EntityFramework.xml
+E:\github\OnlineTesting\RealTimeJudge\bin\Debug\System.Web.Mvc.xml
+E:\github\OnlineTesting\RealTimeJudge\obj\Debug\RealTimeJudge.csprojResolveAssemblyReference.cache
+E:\github\OnlineTesting\RealTimeJudge\obj\Debug\RealTimeJudge.dll
+E:\github\OnlineTesting\RealTimeJudge\obj\Debug\RealTimeJudge.pdb

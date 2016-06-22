@@ -12,3 +12,19 @@
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\obj\Debug\TestSchedulerProject.csprojResolveAssemblyReference.cache
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\obj\Debug\TestSchedulerProject.exe
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\obj\Debug\TestSchedulerProject.pdb
+E:\github\OnlineTesting\TestSchedulerProject\bin\Debug\TestSchedulerProject.exe.config
+E:\github\OnlineTesting\TestSchedulerProject\obj\Debug\TestSchedulerProject.exe
+E:\github\OnlineTesting\TestSchedulerProject\obj\Debug\TestSchedulerProject.pdb
+E:\github\OnlineTesting\TestSchedulerProject\bin\Debug\TestSchedulerProject.exe
+E:\github\OnlineTesting\TestSchedulerProject\bin\Debug\TestSchedulerProject.pdb
+E:\github\OnlineTesting\TestSchedulerProject\bin\Debug\EntityFramework.dll
+E:\github\OnlineTesting\TestSchedulerProject\bin\Debug\EntityFramework.SqlServer.dll
+E:\github\OnlineTesting\TestSchedulerProject\bin\Debug\RealTimeJudge.dll
+E:\github\OnlineTesting\TestSchedulerProject\bin\Debug\SMPR-testing-Lib.dll
+E:\github\OnlineTesting\TestSchedulerProject\bin\Debug\System.Web.Mvc.dll
+E:\github\OnlineTesting\TestSchedulerProject\bin\Debug\RealTimeJudge.pdb
+E:\github\OnlineTesting\TestSchedulerProject\bin\Debug\SMPR-testing-Lib.pdb
+E:\github\OnlineTesting\TestSchedulerProject\bin\Debug\EntityFramework.xml
+E:\github\OnlineTesting\TestSchedulerProject\bin\Debug\EntityFramework.SqlServer.xml
+E:\github\OnlineTesting\TestSchedulerProject\bin\Debug\System.Web.Mvc.xml
+E:\github\OnlineTesting\TestSchedulerProject\obj\Debug\TestSchedulerProject.csprojResolveAssemblyReference.cache

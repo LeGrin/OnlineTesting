@@ -40,6 +40,7 @@ namespace SMPR_testing_Lib.Domain
         /// <summary>
         /// Цена вопроса, задается преподом
         /// </summary>
+        [Range(0, Double.MaxValue)]
         public double Price { get; set; }
 		[NotMapped]
 		public double PriceTask {
@@ -49,6 +50,8 @@ namespace SMPR_testing_Lib.Domain
 			set {
 				if (value < 0)
 					value = 0;
+				if (value > Double.MaxValue)
+					value = Double.MaxValue;
 				if (double.IsNaN(value))
 					value = 0;			
 				Price = value;
