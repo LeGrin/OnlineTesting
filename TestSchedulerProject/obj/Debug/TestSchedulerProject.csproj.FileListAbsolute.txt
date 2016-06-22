@@ -12,3 +12,19 @@
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\obj\Debug\TestSchedulerProject.csprojResolveAssemblyReference.cache
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\obj\Debug\TestSchedulerProject.exe
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\TestSchedulerProject\obj\Debug\TestSchedulerProject.pdb
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\TestSchedulerProject\bin\Debug\TestSchedulerProject.exe.config
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\TestSchedulerProject\bin\Debug\TestSchedulerProject.exe
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\TestSchedulerProject\bin\Debug\TestSchedulerProject.pdb
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\TestSchedulerProject\bin\Debug\EntityFramework.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\TestSchedulerProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\TestSchedulerProject\bin\Debug\RealTimeJudge.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\TestSchedulerProject\bin\Debug\SMPR-testing-Lib.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\TestSchedulerProject\bin\Debug\System.Web.Mvc.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\TestSchedulerProject\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\TestSchedulerProject\bin\Debug\RealTimeJudge.pdb
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\TestSchedulerProject\bin\Debug\SMPR-testing-Lib.pdb
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\TestSchedulerProject\bin\Debug\EntityFramework.xml
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\TestSchedulerProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\TestSchedulerProject\obj\Debug\TestSchedulerProject.csprojResolveAssemblyReference.cache
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\TestSchedulerProject\obj\Debug\TestSchedulerProject.exe
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\TestSchedulerProject\obj\Debug\TestSchedulerProject.pdb

@@ -13,3 +13,20 @@
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\SMPRSheduler.csproj.GenerateResource.Cache
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\WindowsServiceFirst.exe
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\WindowsServiceFirst.pdb
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\WindowsServiceFirst.exe.config
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\WindowsServiceFirst.exe
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\WindowsServiceFirst.pdb
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\RealTimeJudge.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\SMPR-testing-Lib.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\EntityFramework.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\System.Web.Mvc.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\RealTimeJudge.pdb
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\SMPR-testing-Lib.pdb
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\EntityFramework.xml
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\SMPRSheduler.csprojResolveAssemblyReference.cache
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\SMPRShedulerService.ProjectInstaller.resources
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\SMPRShedulerService.SMPRSheduler.resources
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\SMPRSheduler.csproj.GenerateResource.Cache
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\WindowsServiceFirst.exe
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\WindowsServiceFirst.pdb

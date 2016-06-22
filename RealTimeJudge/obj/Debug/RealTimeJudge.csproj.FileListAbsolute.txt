@@ -8,3 +8,15 @@
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\RealTimeJudge\obj\Debug\RealTimeJudge.csprojResolveAssemblyReference.cache
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\RealTimeJudge\obj\Debug\RealTimeJudge.dll
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\RealTimeJudge\obj\Debug\RealTimeJudge.pdb
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\RealTimeJudge\bin\Debug\RealTimeJudge.dll.config
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\RealTimeJudge\bin\Debug\RealTimeJudge.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\RealTimeJudge\bin\Debug\RealTimeJudge.pdb
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\RealTimeJudge\bin\Debug\SMPR-testing-Lib.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\RealTimeJudge\bin\Debug\EntityFramework.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\RealTimeJudge\bin\Debug\System.Web.Mvc.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\RealTimeJudge\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\RealTimeJudge\bin\Debug\SMPR-testing-Lib.pdb
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\RealTimeJudge\bin\Debug\EntityFramework.xml
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\RealTimeJudge\obj\Debug\RealTimeJudge.csprojResolveAssemblyReference.cache
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\RealTimeJudge\obj\Debug\RealTimeJudge.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\RealTimeJudge\obj\Debug\RealTimeJudge.pdb

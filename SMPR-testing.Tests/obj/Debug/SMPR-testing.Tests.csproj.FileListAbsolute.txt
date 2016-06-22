@@ -50,3 +50,6 @@
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\SMPR-testing.Tests\bin\Debug\DotNetOpenAuth.OpenId.xml
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\SMPR-testing.Tests\obj\Debug\SMPR-testing.Tests.dll
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\SMPR-testing.Tests\obj\Debug\SMPR-testing.Tests.pdb
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\SMPR-testing.Tests\obj\Debug\SMPR-testing.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\SMPR-testing.Tests\obj\Debug\SMPR-testing.Tests.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\SMPR-testing.Tests\obj\Debug\SMPR-testing.Tests.pdb

@@ -1,0 +1,3 @@
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\obj\Release\SMPRShedulerService.ProjectInstaller.resources
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\obj\Release\SMPRShedulerService.SMPRSheduler.resources
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\obj\Release\SMPRSheduler.csproj.GenerateResource.Cache

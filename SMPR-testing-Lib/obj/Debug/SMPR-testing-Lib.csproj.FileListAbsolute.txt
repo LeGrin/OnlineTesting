@@ -21,3 +21,13 @@
 \\psf\Home\Desktop\Coding\University\OnlineTesting\SMPR-testing-Lib\obj\Debug\SMPR-testing-Lib.csprojResolveAssemblyReference.cache
 \\psf\Home\Desktop\Coding\University\OnlineTesting\SMPR-testing-Lib\obj\Debug\SMPR-testing-Lib.dll
 \\psf\Home\Desktop\Coding\University\OnlineTesting\SMPR-testing-Lib\obj\Debug\SMPR-testing-Lib.pdb
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\SMPR-testing-Lib\bin\Debug\SMPR-testing-Lib.dll.config
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\SMPR-testing-Lib\bin\Debug\SMPR-testing-Lib.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\SMPR-testing-Lib\bin\Debug\SMPR-testing-Lib.pdb
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\SMPR-testing-Lib\bin\Debug\EntityFramework.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\SMPR-testing-Lib\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\SMPR-testing-Lib\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\SMPR-testing-Lib\bin\Debug\EntityFramework.xml
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\SMPR-testing-Lib\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\SMPR-testing-Lib\obj\Debug\SMPR-testing-Lib.dll
+C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\SMPR-testing-Lib\obj\Debug\SMPR-testing-Lib.pdb

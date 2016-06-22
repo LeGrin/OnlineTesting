@@ -317,7 +317,6 @@
     <Content Include="ClassDiagram.cd" />
     <None Include="Properties\PublishProfiles\tpr0 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\tpr0 - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\tpr0.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -392,12 +391,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SMPR-testing-Lib\SMPR-testing-Lib.csproj">
-      <Project>{0a256e03-86ff-45e0-a2a7-a647eda3bd86}</Project>
-      <Name>SMPR-testing-Lib</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Migrations\201404271646118_DbCreation.resx">
       <DependentUpon>201404271646118_DbCreation.cs</DependentUpon>
     </EmbeddedResource>
@@ -425,6 +418,12 @@
     <EmbeddedResource Include="Migrations\201406082208463_v5_prices_for_task_and_test_added.resx">
       <DependentUpon>201406082208463_v5_prices_for_task_and_test_added.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMPR-testing-Lib\SMPR-testing-Lib.csproj">
+      <Project>{0a256e03-86ff-45e0-a2a7-a647eda3bd86}</Project>
+      <Name>SMPR-testing-Lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
