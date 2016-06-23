@@ -34,37 +34,36 @@ namespace RealTimeJudge.ManyOfManyQuestions
             IList<Task> tasks,
             IList<PriceData> marks)
         {
-            _tasksVariants = tasksVariants;
-            var questionsComplexity = new double[NumberOfStudents][];
+			if (marks.Any() && tasks.Any()) {
+				_tasksVariants = tasksVariants;
+				var questionsComplexity = new double[NumberOfStudents][];
 
-            // for the first student mark we assume that the questions have initialQuestionsComplexity
-            // and the previous student had the maxMark Є [0, 1]
-            questionsComplexity[0] = EvaluateCurrentStudentQuestionsComplexity(initialQuestionsComplexity, 1, answers.First());
-            marks.Add(new PriceData());
+				// for the first student mark we assume that the questions have initialQuestionsComplexity
+				// and the previous student had the maxMark Є [0, 1]
+				questionsComplexity[0] = EvaluateCurrentStudentQuestionsComplexity(initialQuestionsComplexity, 1, answers.First());
+				marks.Add(new PriceData());
 
-			marks[0].PricePriceData = EvaluateCurrentStudentMark(questionsComplexity[0], answers.First());
+				marks[0].PricePriceData = EvaluateCurrentStudentMark(questionsComplexity[0], answers.First());
 
-            for (var j = 1; j < NumberOfStudents; ++j)
-            {
-                questionsComplexity[j] =
-                    EvaluateCurrentStudentQuestionsComplexity(
-                        questionsComplexity[j - 1],
-						marks[j - 1].PricePriceData,
-                        answers[j]);
-                marks.Add(new PriceData());
-				marks[j].PricePriceData = EvaluateCurrentStudentMark(questionsComplexity[j], answers[j]);
-            }
+				for (var j = 1; j < NumberOfStudents; ++j) {
+					questionsComplexity[j] =
+						EvaluateCurrentStudentQuestionsComplexity(
+							questionsComplexity[j - 1],
+							marks[j - 1].PricePriceData,
+							answers[j]);
+					marks.Add(new PriceData());
+					marks[j].PricePriceData = EvaluateCurrentStudentMark(questionsComplexity[j], answers[j]);
+				}
+				if (questionsComplexity.Length > NumberOfManyOfManyQuestions) {
+					for (var i = 0; i < NumberOfManyOfManyQuestions && i < questionsComplexity[NumberOfManyOfManyQuestions - 1].Length; ++i) {
+						tasks[i].PriceTask = questionsComplexity[NumberOfManyOfManyQuestions - 1][i] * MaxMark;
+					}
+				}
 
-            for (var i = 0; i < NumberOfManyOfManyQuestions; ++i)
-            {
-                tasks[i].PriceTask = questionsComplexity[NumberOfManyOfManyQuestions - 1][i] * MaxMark;
-            }
-
-            for (var i = 0; i < NumberOfStudents; ++i)
-            {
-                marks[i].PricePriceData = MaxMark * EvaluateCurrentStudentMark(questionsComplexity.Last(), answers[i]);
-            }
-
+				for (var i = 0; i < NumberOfStudents; ++i) {
+					marks[i].PricePriceData = MaxMark * EvaluateCurrentStudentMark(questionsComplexity.Last(), answers[i]);
+				}
+			}
             return new Tuple<IEnumerable<PriceData>, IList<Task>>(marks, tasks);
         }
 

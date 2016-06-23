@@ -13,3 +13,20 @@
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\SMPRSheduler.csproj.GenerateResource.Cache
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\WindowsServiceFirst.exe
 \\psf\home\Documents\Visual Studio 2013\Projects\NP\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\WindowsServiceFirst.pdb
+E:\github\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\WindowsServiceFirst.exe.config
+E:\github\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\WindowsServiceFirst.exe
+E:\github\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\WindowsServiceFirst.pdb
+E:\github\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\WindowsServiceFirst.exe
+E:\github\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\WindowsServiceFirst.pdb
+E:\github\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\RealTimeJudge.dll
+E:\github\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\SMPR-testing-Lib.dll
+E:\github\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\EntityFramework.dll
+E:\github\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\System.Web.Mvc.dll
+E:\github\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\RealTimeJudge.pdb
+E:\github\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\SMPR-testing-Lib.pdb
+E:\github\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\EntityFramework.xml
+E:\github\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\bin\Debug\System.Web.Mvc.xml
+E:\github\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\SMPRSheduler.csprojResolveAssemblyReference.cache
+E:\github\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\SMPRShedulerService.ProjectInstaller.resources
+E:\github\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\SMPRShedulerService.SMPRSheduler.resources
+E:\github\OnlineTesting\WindowsServiceFirst\WindowsServiceFirst\obj\Debug\SMPRSheduler.csproj.GenerateResource.Cache

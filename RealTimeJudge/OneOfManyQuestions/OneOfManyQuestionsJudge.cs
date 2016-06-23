@@ -57,7 +57,7 @@ namespace RealTimeJudge.OneOfManyQuestions
 				//here we evaluate answers prices depending on student's given answers
 				IList<double> previousStudentEachQuestionMarks = new List<double>(NumberOfOneOfManyQuestions);
 
-				for (var i = 0; i < NumberOfOneOfManyQuestions; ++i) {
+				for (var i = 0; i < NumberOfOneOfManyQuestions && i < tasks.Count; ++i) {
 					var taskAnswers = tasks[i].Answers;
 
 					foreach (var answer in taskAnswers.Where(ti => ti.Text == answers[0][i].GivenAnswer)) {
@@ -77,7 +77,7 @@ namespace RealTimeJudge.OneOfManyQuestions
 						previousStudentEachQuestionMarks,
 						_tasksVariantsPrice);
 
-				for (var j = 1; j < NumberOfStudents; ++j) {
+				for (var j = 1; j < NumberOfStudents && j < marks.Count && j < questionsComplexity.Length; ++j) {
 					questionsComplexity[j] =
 						EvaluateCurrentStudentQuestionsComplexity(
 							questionsComplexity[j - 1],
@@ -95,11 +95,11 @@ namespace RealTimeJudge.OneOfManyQuestions
 							_tasksVariantsPrice);
 				}
 
-				for (var i = 0; i < NumberOfOneOfManyQuestions; ++i) {
+				for (var i = 0; i < NumberOfOneOfManyQuestions && i < tasks.Count; ++i) {
 					tasks[i].PriceTask = questionsComplexity[NumberOfOneOfManyQuestions - 1][i] * MaxMark;
 				}
 
-				for (var i = 0; i < NumberOfStudents; ++i) {
+				for (var i = 0; i < NumberOfStudents && i < marks.Count; ++i) {
 					marks[i].PricePriceData = MaxMark * EvaluateCurrentStudentMark(
 						questionsComplexity.Last(),
 						previousStudentEachQuestionMarks);
@@ -115,7 +115,7 @@ namespace RealTimeJudge.OneOfManyQuestions
         {
             var currentStudentQuestionsComplexity = new double[NumberOfOneOfManyQuestions];
 
-            for (var i = 0; i < NumberOfOneOfManyQuestions; ++i)
+			for (var i = 0; i < NumberOfOneOfManyQuestions && i < currentStudentQuestionsComplexity.Length && i < previousStudentQuestionsComplexity.Count; ++i)
             {
                 currentStudentQuestionsComplexity[i] =
                     previousStudentQuestionsComplexity[i] * 
