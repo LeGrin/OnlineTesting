@@ -1,0 +1,12 @@
+C:\Users\Станислав\OnlineTesting\SMPR-testing-Lib\bin\Release\SMPR-testing-Lib.dll.config
+C:\Users\Станислав\OnlineTesting\SMPR-testing-Lib\bin\Release\SMPR-testing-Lib.dll
+C:\Users\Станислав\OnlineTesting\SMPR-testing-Lib\bin\Release\SMPR-testing-Lib.pdb
+C:\Users\Станислав\OnlineTesting\SMPR-testing-Lib\bin\Release\EntityFramework.dll
+C:\Users\Станислав\OnlineTesting\SMPR-testing-Lib\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Станислав\OnlineTesting\SMPR-testing-Lib\bin\Release\System.Web.Mvc.dll
+C:\Users\Станислав\OnlineTesting\SMPR-testing-Lib\bin\Release\EntityFramework.xml
+C:\Users\Станислав\OnlineTesting\SMPR-testing-Lib\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Станислав\OnlineTesting\SMPR-testing-Lib\bin\Release\System.Web.Mvc.xml
+C:\Users\Станислав\OnlineTesting\SMPR-testing-Lib\obj\Release\SMPR-testing-Lib.csprojResolveAssemblyReference.cache
+C:\Users\Станислав\OnlineTesting\SMPR-testing-Lib\obj\Release\SMPR-testing-Lib.dll
+C:\Users\Станислав\OnlineTesting\SMPR-testing-Lib\obj\Release\SMPR-testing-Lib.pdb

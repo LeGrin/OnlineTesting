@@ -9,7 +9,13 @@
         <title></title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
-        <link rel="stylesheet" href="~/Content/css/style.css" type="text/css" media="screen, projection" />
+
+        <!-- Bootstrap -->
+        <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="~/Content/css/main.css" type="text/css" media="screen, projection" />
+
+        
     
         <!-- jQuery library (served from Google) -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -19,43 +25,50 @@
         <!-- bxSlider CSS file -->
         @*<link href="~/Content/css/jquery.bxslider.css" rel="stylesheet" />*@
     
-        @Styles.Render("~/Content/css/style.css")
     </head>
     
     <body>
-        <div id="wrapper">
-            <div id="header-wrapper">
-                <div id="header">
-                    <ul>
-                        @if (isAuthenticated) {
-                            <li><a href="@Url.Action("Index", "Profile")">@WebSecurity.CurrentUserName</a></li>
-                        }
-                        <li><a class="hider" href="#" data-logoff="@Url.Action("Logoff", "Account")"
-                               data-login="@Url.Action("Login", "Account")"
-                               data-isAuthorized="@User.Identity.IsAuthenticated.ToString().ToLower()">
-                                @(isAuthenticated ? "Log out" : "Log in")
-                            </a>
-                        </li>
-                        <li><a href="@Url.Action("Index", "Home")">HOME</a></li>
-                    </ul>
-                </div>
-            </div>
-    
-            @RenderBody()
-            
-            <div id="footer">
-                <div id="footer-menu">
-                    <ul>
-                        <li><a class="active" href="@Url.Action("Index", "Home")">HOME</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">How It Works</a></li>
-                        <li><a href="@Url.Action("Index", "Profile")">My Account</a></li>
-                        <li><a href="@Url.Action("Login", "Account")">Log In</a></li>
-                    </ul>
-                </div>
-                <div id="copyrights">Copyright (c) UNICYB 2014</div>
-            </div>
-        </div>
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="@Url.Action("Index","Home")">Головна <span class="sr-only">(current)</span></a></li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li class="active"><a href="@Url.Action("Logoff", "Account")">Вийти <span class="sr-only">(current)</span></a></li>
+                            }
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+
+                @RenderBody()
+
+                <!--  <div id="footer">
+              <div id="footer-menu">
+                  <ul>
+                      <li><a class="active" href="@Url.Action("Index", "Home")">HOME</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">How It Works</a></li>
+                      <li><a href="@Url.Action("Index", "Profile")">My Account</a></li>
+                      <li><a href="@Url.Action("Login", "Account")">Log In</a></li>
+                  </ul>
+              </div>
+              <div id="copyrights">Copyright (c) UNICYB 2014</div>
+          </div>-->
+
+                
     </body>
    
 </html>
@@ -89,3 +102,6 @@
 
     
 </script>
+
+
+<script src="~/Content/js/main.js"></script>
