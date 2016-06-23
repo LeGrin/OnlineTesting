@@ -26,12 +26,58 @@
 
 .first-screen .content {
     height: 100vh;
+    padding-top: 65px;
 }
 
 .first-screen h1 {
     text-align: center;
     font-size: 4.5em;
-    margin-top: 35vh;
+    margin-top: 24vh;
+}
+
+#register-form {
+    width: 584px;
+    margin: 0 auto;
+}
+#register-form label {
+    font-size: 20px;
+    padding: 10px 0;
+    padding-right: 40px;
+}
+#register-form input[type="text"], #register-form input[type="password"] {
+    font-size: 20px;
+    padding: 0 6px;
+}
+
+#register-form input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+.to-reg {
+    font-size: 20px;
+    line-height: 60px;
+}
+.to-reg a {
+    color: #0cc;
+}
+td.remember label {
+    padding: 0!important;
+}
+
+footer.reg {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left:0;
+}
+
+.validation-summary-errors {
+    color: #fff;
+}
+.validation-summary-errors ul {
+    padding: 0;
+    list-style: none;
 }
 
 @media only screen and (max-width: 529px) {
@@ -47,10 +93,10 @@
 }
 
 .first-screen .start-btn {
-    width: 240px;
+    width: 256px;
     position: relative;
     left: 50%;
-    margin-left: -120px;
+    margin-left: -128px;
 }
 
 .btn {

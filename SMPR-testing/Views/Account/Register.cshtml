@@ -12,44 +12,74 @@
     }
 }
 
-<hgroup class="title">
-    @*<h1>@ViewBag.Title.</h1>*@
-    <h2 id="new-account-title">Создание нового аккаунта</h2>
-</hgroup>
+<div class="first-screen">
+    <div class="container-fluid first-bg"></div>
+    <div class="container-fluid main-screen-bg"></div>
+    <div class="container content">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                @*<h1>@ViewBag.Title.</h1>*@
+                <h2 id="new-account-title">Создание нового аккаунта</h2>
+            </div>
+            <div class="col-xs-12">
+              @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @id = "register-form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary()
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @id = "register-form" })) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
-    
-    <table data-is-name-busy="@Url.Action("IsLoginNameBusy", "Account")">
-        <tr>
-            <td>@Html.LabelFor(m => m.LoginName)</td>
-            <td>@Html.TextBoxFor(m => m.LoginName)</td>
-        </tr>
-        
-        <tr>
-            <td>@Html.LabelFor(m => m.Name)</td>
-            <td>@Html.TextBoxFor(m => m.Name)</td>
-        </tr>
-        
-        <tr>
-            <td>@Html.LabelFor(m => m.Password)</td>
-            <td>@Html.TextBoxFor(m => m.Password)</td>
-        </tr>
-        
-        <tr>
-            <td></td>
-            <td>
-                @Html.DropDownList("GroupId", groupList, "- Выберите группу -")
-            </td>
-        </tr>
+                    <table data-is-name-busy="@Url.Action("IsLoginNameBusy", "Account")">
+                        <tr>
+                            <td>@Html.LabelFor(m => m.LoginName)</td>
+                            <td>@Html.TextBoxFor(m => m.LoginName)</td>
+                        </tr>
 
-    </table>
-    
-     <input type="submit" id="reg-button" value="Регистрация" />
-    
-     @Html.HiddenFor(m => m.RegDate, new { value = @DateTime.Now })
-}
+                        <tr>
+                            <td>@Html.LabelFor(m => m.Name)</td>
+                            <td>@Html.TextBoxFor(m => m.Name)</td>
+                        </tr>
+
+                        <tr>
+                            <td>@Html.LabelFor(m => m.Password)</td>
+                            <td>@Html.PasswordFor(m => m.Password)</td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div class="form-group">
+                                    @Html.DropDownList("GroupId", groupList, "- Выберите группу -", new { @class = "form-control" })
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div class="form-group" style="padding-top: 20px;">
+                                    <input type="submit" class="btn btn-primary start-btn" id="reg-button" value="Регистрация" />
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+
+
+                    @Html.HiddenFor(m => m.RegDate, new { value = @DateTime.Now })
+                }
+            </div>
+        
+        </div>
+
+        <footer class="container-fluid reg">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>Theory of decision making</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
