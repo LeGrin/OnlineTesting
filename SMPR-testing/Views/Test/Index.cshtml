@@ -17,7 +17,7 @@
 	            <h2>Тест вже пройдений</h2>
 	        }
 	        else {
-	            <h2>Теорія Прийняття Рішень 2015</h2>
+	            <h2>Теорія Прийняття Рішень 2016</h2>
                 <h3 id="time"></h3>
                 <script>
                     window.setInterval("Timer()", 1000);
@@ -106,9 +106,6 @@
             var curBut = $(this);
             //preventing one more click
             curBut.attr("disabled", true);
-            setTimeout(function () {
-                curBut.attr("disabled", false);
-            }, 1500);
 
             var form = $('#wrapper li:visible form');
 
@@ -130,9 +127,10 @@
             answer = answer.substring(0, answer.length - 1);
 
             $.post(form.data('url'), { answer: answer }, function (data) {
-                setTimeout(function () {
+                
                     bxslider.goToNextSlide();
-                }, 300);
+                    curBut.attr("disabled", false);
+                
 
                 form.addClass('answered');
                 form.find('input[type=checkbox]').attr('disabled', true);
