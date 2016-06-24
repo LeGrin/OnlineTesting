@@ -4,69 +4,38 @@
     ViewBag.Title = "Авторизация";
 }
 
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+</hgroup>
 
-<div class="first-screen">
-    <div class="container-fluid first-bg"></div>
-    <div class="container-fluid main-screen-bg"></div>
-    <div class="container content">
-        <div class="row">
-            <div class="col-xs-12 col-md-12">
-                @*<h1>@ViewBag.Title.</h1>*@
-                <h2 id="new-account-title">Авторизация</h2>
-            </div>
-            <div class="col-xs-12">
-                @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @id = "register-form", ReturnUrl = ViewBag.ReturnUrl }))
-                {
-                    @Html.AntiForgeryToken()
-                    @Html.ValidationSummary(true)
-                 
-                    <table>
-                        <tr>
-                            <td>@Html.LabelFor(m => m.UserName)</td>
-                            <td> @Html.TextBoxFor(m => m.UserName)</td>
-                            <td> @Html.ValidationMessageFor(m => m.UserName)</td>
-                        </tr>
-                        <tr>
-                            <td>@Html.LabelFor(m => m.Password)</td> 
-                            <td>@Html.PasswordFor(m => m.Password)</td>
-                            <td>@Html.ValidationMessageFor(m => m.Password)</td>
-                        </tr>
-                        <tr>
-                            <td class="remember">@Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })</td>
-                            <td>@Html.CheckBoxFor(m => m.RememberMe)</td>
-                        </tr>
+<section>
+@using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @id="register-form", ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
 
-                        <tr>
-                            <td></td>
-                            <td>
-                                <input type="submit" class="btn btn-primary start-btn" id="reg-button" value="Авторизация">
-                            </td>
-                        </tr>
-                    </table>
-                    
-                    <p class="to-reg">
-                        @Html.ActionLink("Зарегистрируйтесь", "Register"), если у Вас нет аккаунта.
-                    </p>
-
-
-                }
-            </div>
-
-        </div>
-
-        <footer class="container-fluid reg">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p>Theory of decision making</p>
-                </div>
-            </div>
-        </footer>
-    </div>
-</div>
-
-
-
-
+    <table>
+        <tr>
+            <td>@Html.LabelFor(m => m.UserName)</td>
+            <td> @Html.TextBoxFor(m => m.UserName)</td>
+            <td> @Html.ValidationMessageFor(m => m.UserName)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Password)</td> 
+            <td>@Html.PasswordFor(m => m.Password)</td>
+            <td>@Html.ValidationMessageFor(m => m.Password)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })</td>
+            <td>@Html.CheckBoxFor(m => m.RememberMe)</td>
+        </tr>
+    </table>
+    <input type="submit" id="reg-button" value="Авторизация">
+    <p></p>
+    <p>
+        @Html.ActionLink("Зарегистрируйтесь", "Register"), если у Вас нет аккаунта.
+    </p>
+}
+</section>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
