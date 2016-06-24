@@ -79,6 +79,36 @@ footer.reg {
     padding: 0;
     list-style: none;
 }
+/*
+table.results .table-num {
+    text-align: center;
+}
+table.results .table-quest {
+
+}
+table.results .table-answ {
+
+}
+table.results .table-amount {
+
+}
+*/
+table.results{
+    background: #31383c;
+    color: #fff;
+    width: 100%;
+}
+table.results tr:first-child:hover{
+    background: #31383c;
+    color: #fff;
+}
+table.results tr:hover{
+    color: #31383c;
+}
+table.results td, table.results th {
+    height: 32px;
+    padding: 0 15px;
+}
 
 @media only screen and (max-width: 529px) {
     .first-screen h1 {
