@@ -1,1 +1,1 @@
-C:\Users\Daniyl_Kovaliov\Source\Repos\OnlineTesting\TestSchedulerProject\bin\Release\TestSchedulerProject.exe.config
+E:\github\OnlineTesting\TestSchedulerProject\bin\Release\TestSchedulerProject.exe.config

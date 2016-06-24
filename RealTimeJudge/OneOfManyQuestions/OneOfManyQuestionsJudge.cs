@@ -34,82 +34,77 @@ namespace RealTimeJudge.OneOfManyQuestions
             IList<Task> tasks,
             IList<PriceData> marks)
         {
-            _tasksVariantsPrice = tasksVariantsPrice;
+			if (marks.Any() && tasks.Any()) {
+				_tasksVariantsPrice = tasksVariantsPrice;
 
-            //marks of each student for the block of one from many questions
-            var questionsComplexity = new double[NumberOfStudents][];
+				//marks of each student for the block of one from many questions
+				var questionsComplexity = new double[NumberOfStudents][];
 
-            //initial marks - the most expensive answers prices
-            IList<double> initialMarks = new List<double>(NumberOfOneOfManyQuestions);
-            for (var i = 0; i < NumberOfOneOfManyQuestions; ++i)
-            {
-                initialMarks.Add(_tasksVariantsPrice[i].Max());
-            }
+				//initial marks - the most expensive answers prices
+				IList<double> initialMarks = new List<double>(NumberOfOneOfManyQuestions);
+				for (var i = 0; i < NumberOfOneOfManyQuestions; ++i) {
+					initialMarks.Add(_tasksVariantsPrice[i].Max());
+				}
 
-            // for the first student mark we assume that the questions have initialQuestionsComplexity,
-            // the previous student had the maxMark Є [0, 1]
-            // and he chose the most expensive variants of answers
-            questionsComplexity[0] = EvaluateCurrentStudentQuestionsComplexity(
-                initialQuestionsComplexity, 
-                1,
-                initialMarks);
-            
-            //here we evaluate answers prices depending on student's given answers
-            IList<double> previousStudentEachQuestionMarks = new List<double>(NumberOfOneOfManyQuestions);
+				// for the first student mark we assume that the questions have initialQuestionsComplexity,
+				// the previous student had the maxMark Є [0, 1]
+				// and he chose the most expensive variants of answers
+				questionsComplexity[0] = EvaluateCurrentStudentQuestionsComplexity(
+					initialQuestionsComplexity,
+					1,
+					initialMarks);
 
-            for (var i = 0; i < NumberOfOneOfManyQuestions; ++i)
-            {
-                var taskAnswers = tasks[i].Answers;
+				//here we evaluate answers prices depending on student's given answers
+				IList<double> previousStudentEachQuestionMarks = new List<double>(NumberOfOneOfManyQuestions);
 
-                foreach (var answer in taskAnswers.Where(ti => ti.Text == answers[0][i].GivenAnswer))
-                {
-                    previousStudentEachQuestionMarks.Add(answer.Price);
-                    break;
-                }
-            }
+				for (var i = 0; i < NumberOfOneOfManyQuestions && i < tasks.Count; ++i) {
+					var taskAnswers = tasks[i].Answers;
 
-            marks[0].Price = EvaluateCurrentStudentMark(
-                questionsComplexity[0], 
-                previousStudentEachQuestionMarks);
+					foreach (var answer in taskAnswers.Where(ti => ti.Text == answers[0][i].GivenAnswer)) {
+						previousStudentEachQuestionMarks.Add(answer.PriceAnswer);
+						break;
+					}
+				}
 
-            // we should reevaluate prices of variants of each question
-            _tasksVariantsPrice = EvaluateTasksVariantsPrice();
-            previousStudentEachQuestionMarks =
-                EvaluateEachQuestionMark(
-                    previousStudentEachQuestionMarks,
-                    _tasksVariantsPrice);
+				marks[0].PricePriceData = EvaluateCurrentStudentMark(
+					questionsComplexity[0],
+					previousStudentEachQuestionMarks);
 
-            for (var j = 1; j < NumberOfStudents; ++j)
-            {
-                questionsComplexity[j] =
-                    EvaluateCurrentStudentQuestionsComplexity(
-                        questionsComplexity[j - 1],
-                        marks[j - 1].Price,
-                        previousStudentEachQuestionMarks);
+				// we should reevaluate prices of variants of each question
+				_tasksVariantsPrice = EvaluateTasksVariantsPrice();
+				previousStudentEachQuestionMarks =
+					EvaluateEachQuestionMark(
+						previousStudentEachQuestionMarks,
+						_tasksVariantsPrice);
 
-                marks[j].Price = EvaluateCurrentStudentMark(
-                    questionsComplexity[j], 
-                    previousStudentEachQuestionMarks);
+				for (var j = 1; j < NumberOfStudents && j < marks.Count && j < questionsComplexity.Length; ++j) {
+					questionsComplexity[j] =
+						EvaluateCurrentStudentQuestionsComplexity(
+							questionsComplexity[j - 1],
+							marks[j - 1].PricePriceData,
+							previousStudentEachQuestionMarks);
 
-                _tasksVariantsPrice = EvaluateTasksVariantsPrice();
-                previousStudentEachQuestionMarks =
-                    EvaluateEachQuestionMark(
-                        previousStudentEachQuestionMarks,
-                        _tasksVariantsPrice);
-            }
-            
-            for (var i = 0; i < NumberOfOneOfManyQuestions; ++i)
-            {
-                tasks[i].Price = questionsComplexity[NumberOfOneOfManyQuestions - 1][i] * MaxMark;
-            }
+					marks[j].PricePriceData = EvaluateCurrentStudentMark(
+						questionsComplexity[j],
+						previousStudentEachQuestionMarks);
 
-            for (var i = 0; i < NumberOfStudents; ++i)
-            {
-                marks[i].Price = MaxMark * EvaluateCurrentStudentMark(
-                    questionsComplexity.Last(), 
-                    previousStudentEachQuestionMarks);
-            }
+					_tasksVariantsPrice = EvaluateTasksVariantsPrice();
+					previousStudentEachQuestionMarks =
+						EvaluateEachQuestionMark(
+							previousStudentEachQuestionMarks,
+							_tasksVariantsPrice);
+				}
 
+				for (var i = 0; i < NumberOfOneOfManyQuestions && i < tasks.Count; ++i) {
+					tasks[i].PriceTask = questionsComplexity[NumberOfOneOfManyQuestions - 1][i] * MaxMark;
+				}
+
+				for (var i = 0; i < NumberOfStudents && i < marks.Count; ++i) {
+					marks[i].PricePriceData = MaxMark * EvaluateCurrentStudentMark(
+						questionsComplexity.Last(),
+						previousStudentEachQuestionMarks);
+				}
+			}
             return new Tuple<IEnumerable<PriceData>, IList<Task>>(marks, tasks);
         }
 
@@ -120,7 +115,7 @@ namespace RealTimeJudge.OneOfManyQuestions
         {
             var currentStudentQuestionsComplexity = new double[NumberOfOneOfManyQuestions];
 
-            for (var i = 0; i < NumberOfOneOfManyQuestions; ++i)
+			for (var i = 0; i < NumberOfOneOfManyQuestions && i < currentStudentQuestionsComplexity.Length && i < previousStudentQuestionsComplexity.Count; ++i)
             {
                 currentStudentQuestionsComplexity[i] =
                     previousStudentQuestionsComplexity[i] * 

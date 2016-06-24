@@ -47,7 +47,7 @@ namespace SMPR_testing_Lib.Repository
                 if (dbEntry != null)
                 {
                     dbEntry.IsCorrect = answer.IsCorrect;
-                    dbEntry.Price = answer.Price;
+                    dbEntry.PriceAnswer = answer.PriceAnswer;
                     dbEntry.TaskId = answer.TaskId;
                     dbEntry.Text = answer.Text;
                 }
@@ -149,22 +149,24 @@ namespace SMPR_testing_Lib.Repository
 
         public void SavePriceData(PriceData priceData)
         {
-            if (priceData.Id == 0)
+            if (priceData.Id == 0 && priceData.SessionId != 0 && priceData.UserId != 0)
             {
                 _context.PricesDatas.Add(priceData);
+				_context.SaveChanges();
             }
             else
             {
                 PriceData dbEntry = _context.PricesDatas.Find(priceData.Id);
                 if (dbEntry != null)
                 {
-                    dbEntry.Price = priceData.Price;
+					dbEntry.PricePriceData = double.IsNaN(priceData.PricePriceData) ? 0 : priceData.PricePriceData;
                     dbEntry.SessionId = priceData.SessionId;
                     dbEntry.TaskId = priceData.TaskId;
-                    dbEntry.UserId = priceData.UserId;
+					dbEntry.UserId = priceData.UserId;					
                 }
+				_context.SaveChanges();
             }
-            _context.SaveChanges();
+            
         }
 
         public PriceData DeletePriceData(int priceDataId)
@@ -302,7 +304,7 @@ namespace SMPR_testing_Lib.Repository
                     dbEntry.Name = task.Name;
                     dbEntry.TaskTypeId = task.TaskTypeId;
                     dbEntry.TestId = task.TestId;
-                    dbEntry.Price = task.Price;
+                    dbEntry.PriceTask = task.PriceTask;
                 }
             }
             _context.SaveChanges();
@@ -381,7 +383,7 @@ namespace SMPR_testing_Lib.Repository
                     dbEntry.Name = test.Name;
                     dbEntry.SubjectId = test.SubjectId;
                     dbEntry.UserId = test.UserId;
-                    dbEntry.Price = test.Price;
+                    dbEntry.GPriceTest = test.GPriceTest;
                 }
             }
             _context.SaveChanges();

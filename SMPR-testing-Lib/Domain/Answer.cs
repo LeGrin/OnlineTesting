@@ -42,6 +42,15 @@ namespace SMPR_testing_Lib.Domain
         /// </summary>
         [Required]
         [Range(-1.0, 1.0)]
-        public double Price { get; set; }
+		public double Price { get; set; }
+		[NotMapped]
+		public double PriceAnswer {
+			get {
+				return Price;
+			}
+			set {
+				Price = value;
+			}
+		}
     }
 }
